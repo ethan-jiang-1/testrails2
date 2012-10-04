@@ -42,5 +42,5 @@ describe Appointment do
     Appointment.count.should be >= 3
 
   end
-  pending "add some examples to (or delete) #{__FILE__}"
+
 end
