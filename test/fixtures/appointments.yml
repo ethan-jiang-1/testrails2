@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: appointments
+#
+#  id               :integer          not null, primary key
+#  physician_id     :integer
+#  patient_id       :integer
+#  appointment_date :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  physician: 
+  patient: 
+  appointment_date: 2012-10-04 20:58:38
+
+two:
+  physician: 
+  patient: 
+  appointment_date: 2012-10-04 20:58:38
