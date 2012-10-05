@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: physicians
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Physician do
@@ -9,6 +19,11 @@ describe Physician do
       rescue Exception => e
       end
       Physician.count.should be 0
+    end
+
+    it "should allow a valid name" do
+      p1 = Physician.create!(:name => "tom1")
+      Physician.find_all_by_name("tom1").first.id.should be p1.id
     end
 
     it "should have unique name " do

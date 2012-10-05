@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005034747) do
+ActiveRecord::Schema.define(:version => 20121005130918) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -23,6 +22,22 @@ ActiveRecord::Schema.define(:version => 20121005034747) do
 
   add_index "appointments", ["patient_id"], :name => "index_appointments_on_patient_id"
   add_index "appointments", ["physician_id"], :name => "index_appointments_on_physician_id"
+
+  create_table "assemblies", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "assembly_parts", :force => true do |t|
+    t.integer  "assembly_id"
+    t.integer  "part_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
+  add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
 
   create_table "customers", :force => true do |t|
     t.string   "name"
@@ -58,6 +73,12 @@ ActiveRecord::Schema.define(:version => 20121005034747) do
   end
 
   add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
+
+  create_table "parts", :force => true do |t|
+    t.string   "part_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "patients", :force => true do |t|
     t.string   "name"

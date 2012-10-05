@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: appointments
+#
+#  id               :integer          not null, primary key
+#  physician_id     :integer
+#  patient_id       :integer
+#  appointment_date :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 require 'spec_helper'
 
 
