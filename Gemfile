@@ -44,6 +44,7 @@ group :test, :development do
   gem "rspec-rails"
   gem "require_relative"
   gem "factory_girl_rails",  "=1.7.0"
+  gem "capybara"
 end
 
 gem "fastercsv"

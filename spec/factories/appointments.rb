@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :appointment do
     appointment_date   DateTime.now
+    #sequence(:appointment_date) {|n| DateTime.now + 1 }
   end
 end

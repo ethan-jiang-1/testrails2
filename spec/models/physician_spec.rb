@@ -7,7 +7,6 @@ describe Physician do
       begin
         ph1 = Physician.create!
       rescue Exception => e
-        p e
       end
       Physician.count.should be 0
     end
@@ -17,7 +16,6 @@ describe Physician do
         ph1 = Physician.create!(:name => "Dr. tom")
         ph2 = Physician.create!(:name => "Dr. tom")
       rescue Exception => e
-        p e
       end
 
       Physician.count.should be 1
