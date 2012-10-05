@@ -19,6 +19,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem "rails_admin"
 end
 
 gem 'jquery-rails'
@@ -43,8 +44,15 @@ group :test, :development do
   gem "rspec-rails"
   gem "require_relative"
   gem "factory_girl_rails",  "=1.7.0"
-  gem "fastercsv"
-  gem "rails_admin"
 end
 
+gem "fastercsv"
+gem "rails_admin"
 gem "devise"
+
+#gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
+#gem "jdbc-sqlite3"  #, :platforms => :jruby
+#gem "jruby-openssl" #, :platforms => :jruby
+
+#gem "passenger" #, :platforms => :jruby
+#gem "mongrel", "1.2.0.pre2"
