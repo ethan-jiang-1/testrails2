@@ -1,5 +1,5 @@
 module ApplicationHelper
   def page_title_name
-        "Test Rails Home Page"
+        "Test Rails"
   end
 end
