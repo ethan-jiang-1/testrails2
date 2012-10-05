@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005130918) do
+ActiveRecord::Schema.define(:version => 20121005171716) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20121005130918) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "assembly_parts", :force => true do |t|
+  create_table "assembly_parts", :id => false, :force => true do |t|
     t.integer  "assembly_id"
     t.integer  "part_id"
     t.datetime "created_at",  :null => false
@@ -45,6 +45,20 @@ ActiveRecord::Schema.define(:version => 20121005130918) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "employees", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "managers", :force => true do |t|
+    t.integer  "employee_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "managers", ["employee_id"], :name => "index_managers_on_employee_id"
 
   create_table "models", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -87,6 +101,20 @@ ActiveRecord::Schema.define(:version => 20121005130918) do
   end
 
   create_table "physicians", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pictures", :force => true do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "products", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
