@@ -1,4 +1,14 @@
 TestRails2::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  devise_for :models
+
+  
+
+  get "home/index"
+
+  root :to => "home#index"
+
   resources :orders
 
   resources :customers
@@ -59,4 +69,8 @@ TestRails2::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
+  #devise_for :admins
+  # # Feel free to change '/admin' to any namespace you need.
+
 end
