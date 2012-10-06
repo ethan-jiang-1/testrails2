@@ -65,6 +65,8 @@ GEM
       railties (>= 3.0.0)
     fastercsv (1.5.5)
     ffi (1.1.5)
+    foreigner (1.2.1)
+      activerecord (>= 3.0.0)
     haml (3.1.7)
     hike (1.2.1)
     i18n (0.6.1)
@@ -186,6 +188,7 @@ DEPENDENCIES
   devise
   factory_girl_rails (= 1.7.0)
   fastercsv
+  foreigner
   jquery-rails
   json
   rails (= 3.2.8)

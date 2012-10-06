@@ -1,7 +1,7 @@
 class CreateAssemblyParts < ActiveRecord::Migration
   def change
-#    create_table :assembly_parts, :id => false do |t|
-      create_table :assembly_parts |t|
+#   create_table :assembly_parts, :id => false do |t|
+    create_table :assembly_parts do |t|
       t.references :assembly
       t.references :part
 

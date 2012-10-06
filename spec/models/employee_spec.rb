@@ -30,7 +30,35 @@ describe Employee do
   end
 
   it "should have clear manager <-> subordinates relationship" do
-    pending "todo: Yizhen ? how to make self-relation works?  #{__FILE__}"
+    e1 = FactoryGirl.create(:employee)
+    e11 = FactoryGirl.create(:employee)
+    e12 = FactoryGirl.create(:employee)
+    e13 = FactoryGirl.create(:employee)
+
+    name1 = e1.name
+    name13 = e13.name
+
+    e1.subordinates << e11        #using subordinates to build up relationship between employee and manager
+    e1.subordinates << e12
+    e1.subordinates << e13
+
+
+    e1sx = e1.subordinates.find_all   #using subordinates to query the set of employee under a manager
+    #es1.each {|x| p x}
+    e1sx.should include e11
+    e1sx.should include e12
+    e1sx.should include e13
+
+    e1x  = Employee.find_all_by_name(name1).first
+    e13x = Employee.find_all_by_name(name13).first
+
+    e13xm = e13x.manager  #using .manager to access employee's manager
+    #p e1x
+    #p e13x
+    #p e13xm
+    e13xm.name.should match e1x.name
+    e13xm.id.should be e1x.id
+
   end
 
 end

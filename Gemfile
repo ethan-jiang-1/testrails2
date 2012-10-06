@@ -47,6 +47,8 @@ group :test, :development do
   gem "capybara"
 end
 
+gem "foreigner"
+
 gem "fastercsv"
 gem "rails_admin"
 gem "devise"
