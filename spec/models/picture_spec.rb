@@ -42,7 +42,7 @@ describe Picture do
 
     pd1.pictures.find_all.count.should be 3
 
-    pending "todo - still cannot make query om imagable to work - to get where the picture point to (employee or product)"
+    pending "todo - Yizhen: still cannot make query on imagable to work - to get where the picture point to (employee or product) #{__FILE__}"
     #px = pd1.pictures.find_all.first
     #p px
     #p pd1

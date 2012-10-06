@@ -6,6 +6,7 @@
 #  name       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  manager_id :integer
 #
 
 class Employee < ActiveRecord::Base
