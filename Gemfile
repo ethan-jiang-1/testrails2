@@ -47,11 +47,13 @@ group :test, :development do
   gem "capybara"
 end
 
-gem "foreigner"
+#gem "foreigner"
 
 gem "fastercsv"
 gem "rails_admin"
 gem "devise"
+
+gem "ruby-prof"
 
 #gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
 #gem "jdbc-sqlite3"  #, :platforms => :jruby
