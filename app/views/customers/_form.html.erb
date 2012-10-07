@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="field form-inline">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class=>"offset1" %>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+  <div class="field form-inline">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, :class=>"offset1" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=>"btn btn-primary" %>
   </div>
 <% end %>
