@@ -1,4 +1,7 @@
 class CustomersController < ApplicationController
+  before_filter :authenticate_user_guest!, :except => [:show, :index]
+
+
   # GET /customers
   # GET /customers.json
   def index

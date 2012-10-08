@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_on_oder, :except => [:show, :index]
+
   # GET /orders
   # GET /orders.json
   def index
@@ -80,4 +82,15 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def authenticate_on_oder
+    if user_admin_signed_in?
+      p current_admin_user.role
+      true
+    end
+    false
+  end
+
 end

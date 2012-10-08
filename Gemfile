@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'json'
 
@@ -53,11 +53,18 @@ gem "fastercsv"
 gem "rails_admin"
 gem "devise"
 
-gem "ruby-prof"
+gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby
 
-#gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
-#gem "jdbc-sqlite3"  #, :platforms => :jruby
-#gem "jruby-openssl" #, :platforms => :jruby
+group :active_record do
+  platforms :jruby do
+    gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
+    gem "jdbc-sqlite3"  #, :platforms => :jruby
+    gem "jruby-openssl" #, :platforms => :jruby
+  end
+  platforms :ruby, :mswin, :mingw do
+    gem 'sqlite3'
+  end
+end
 
-#gem "passenger" #, :platforms => :jruby
+#gem "passenger", #, :platforms => :jruby
 #gem "mongrel", "1.2.0.pre2"
