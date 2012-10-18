@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_filter :authenticate_user_guest!, :except => [:show, :index]
+  #before_filter :authenticate_user!, :except => [:show, :index]
 
 
   # GET /customers
