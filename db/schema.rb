@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008104839) do
+ActiveRecord::Schema.define(:version => 20121018011120) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(:version => 20121008104839) do
   end
 
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "models", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

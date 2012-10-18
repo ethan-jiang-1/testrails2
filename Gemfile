@@ -72,3 +72,5 @@ end
 
 #gem "passenger", #, :platforms => :jruby
 #gem "mongrel", "1.2.0.pre2"
+
+gem 'geocoder'
