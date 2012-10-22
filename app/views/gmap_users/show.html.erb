@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>name:</strong>
+  <%= @gmap_user.address %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @gmap_user.address %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @gmap_user.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @gmap_user.longitude %>
+</p>
+
+<%= gmaps4rails(@json) %>
+<%= yield :scripts %>
+
+
+<%= link_to 'Edit', edit_gmap_user_path(@gmap_user) %> |
+<%= link_to 'Back', gmap_users_path %>

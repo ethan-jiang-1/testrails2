@@ -1,6 +1,7 @@
 TestRails2::Application.routes.draw do
 
   resources :locations
+  resources :gmap_users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

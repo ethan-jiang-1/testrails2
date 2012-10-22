@@ -1,0 +1,2 @@
+module GmapUsersHelper
+end

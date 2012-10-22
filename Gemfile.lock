@@ -69,6 +69,7 @@ GEM
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
     geocoder (1.1.4)
+    gmaps4rails (1.5.6)
     haml (3.1.7)
     hike (1.2.1)
     i18n (0.6.1)
@@ -193,6 +194,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.7.0)
   fastercsv
   geocoder
+  gmaps4rails
   jquery-rails
   jruby-openssl
   json

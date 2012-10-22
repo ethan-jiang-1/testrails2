@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121018011120) do
+ActiveRecord::Schema.define(:version => 20121022155810) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -54,6 +55,16 @@ ActiveRecord::Schema.define(:version => 20121018011120) do
   end
 
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
+
+  create_table "gmap_users", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "address"
