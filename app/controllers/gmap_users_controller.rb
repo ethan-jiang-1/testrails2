@@ -16,7 +16,7 @@ class GmapUsersController < ApplicationController
   def show
     @gmap_user = GmapUser.find(params[:id])
 
-    @json = GmapUser.all.to_gmaps4rails
+    @gmap_all_marks = GmapUser.all.to_gmaps4rails
 
     respond_to do |format|
       format.html # show.html.erb

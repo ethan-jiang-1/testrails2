@@ -19,8 +19,11 @@
   <%= @gmap_user.longitude %>
 </p>
 
-<%= gmaps4rails(@json) %>
+<!-- < %= gmaps4rails(@gmap_all_marks) % > -->
+<%= gmaps(:markers => {:data => @gmap_all_marks, :options => { :raw => '{ animation: google.maps.Animation.BOUNCE }' } },
+          :map_options => { :raw => '{ disableDefaultUI: true, scrollwheel: false }' }) %>
 <%= yield :scripts %>
+
 
 
 <%= link_to 'Edit', edit_gmap_user_path(@gmap_user) %> |
