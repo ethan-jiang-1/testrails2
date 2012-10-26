@@ -58,7 +58,8 @@ gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby
 group :active_record do
   platforms :jruby do
     #gem 'activerecord-mysql2-adapter'
-    gem 'mysql2'
+    gem 'activerecord-jdbcmysql-adapter'
+    gem 'mysql'
     #gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
     #gem "jdbc-sqlite3"  #, :platforms => :jruby
     gem "jruby-openssl" #, :platforms => :jruby
