@@ -75,3 +75,4 @@ end
 
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'google_places'
