@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121022155810) do
+ActiveRecord::Schema.define(:version => 20121030075310) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -66,12 +66,23 @@ ActiveRecord::Schema.define(:version => 20121022155810) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "location_relations", :id => false, :force => true do |t|
+    t.integer  "loc_from_id"
+    t.integer  "loc_to_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "location_relations", ["loc_from_id"], :name => "index_location_relations_on_loc_from_id"
+  add_index "location_relations", ["loc_to_id"], :name => "index_location_relations_on_loc_to_id"
+
   create_table "locations", :force => true do |t|
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "models", :force => true do |t|
