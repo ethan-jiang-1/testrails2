@@ -24,7 +24,9 @@ describe GmapUsersController do
   # GmapUser. As you add validations to GmapUser, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+        :address => "San Diego, CA, USA"
+    }
   end
 
   # This should return the minimal set of values that should be in the session

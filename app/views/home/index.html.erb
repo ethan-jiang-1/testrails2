@@ -4,16 +4,76 @@
   </div>
 </div>
 
-<div class="container-fluid muted">
-  <hr>
-  <pre>  rails routes info:
-    devise_for :user_admins
-    get "home/index"
-    get "home/search"
-    root :to => "home#index"
-    resources :orders
-    resources :customers
-    resources :locations
-    resources :gmap_users
-  </pre>
+<style type="text/css" media="screen">
+<!--
+      #about h3 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      #about-content {
+        xbackground-color: #ddd;
+        xborder: 1px solid #fc0;
+        xmargin-left: -55px;
+        xmargin-right: -10px;
+      }
+      #about-content table {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 11px;
+        border-collapse: collapse;
+      }
+      #about-content td {
+        padding: 10px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+      #about-content td.name  {xcolor: #555}
+      #about-content td.value {xcolor: #000}
+
+      #about-content ul {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      #about-content.failure {
+        xbackground-color: #fcc;
+        xborder: 1px solid #f00;
+      }
+      #about-content.failure p {
+        margin: 0;
+        padding: 10px;
+      }
+
+      .filename {
+        font-style: italic;
+      }
+-->
+</style>
+<script type="text/javascript">
+<!--
+  function about() {
+    info = document.getElementById('about-content');
+    if (info.style.display == 'none')
+    {
+		if (window.XMLHttpRequest)
+		  { xhr = new XMLHttpRequest(); }
+		else
+		  { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+		xhr.open("GET","/rails/info/properties",false);
+		xhr.send("");
+		info.innerHTML = xhr.responseText;
+		info.style.display = 'block'
+	}
+	else
+	{
+		info.style.display = 'none'
+	}
+  }
+-->
+</script>
+<div id="about" class="container-fluid">
+  <h3><a href="/rails/info/properties" onclick="about(); return false" class="btn btn-info">About the Rails&rsquo;s Environment...</a></h3>
+  <div id="about-content" style="display: none; background-color: #ddd"></div>
 </div>

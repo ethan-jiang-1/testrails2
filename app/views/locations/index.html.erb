@@ -1,13 +1,13 @@
 <title> Locations </title>
 
 <%=  form_tag(locations_path, :method =>:get) do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%=  submit_tag "Search Near", :name => nil %>
-    </p>
+    <div class="nav pull-right">
+      <%= text_field_tag :search, params[:search], :class=>"input-medium search-query" %>
+      <%=  submit_tag "Search Near (100km)", :name => nil, :class=>"btn" %>
+    </div>
 <% end %>
 
-<table>
+<table class="table">
   <tr>
     <th>Address</th>
     <th>Latitude</th>
@@ -18,11 +18,9 @@
       <td><%= location.address %></td>
       <td><%= location.latitude %></td>
       <td><%= location.longitude %></td>
-      <td><%= link_to "Show", location %></td>
-      <td><%= link_to "Edit", edit_location_path(location) %></td>
-      <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Show", location, :class=>"btn-link" %> <%= link_to "Edit", edit_location_path(location), :class=>"btn-link" %> <%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete, :class=>"btn-link" %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Location", new_location_path, :class => "btn-link" %></p>
+<p><%= link_to "New Location", new_location_path, :class => "btn btn-inverse" %></p>

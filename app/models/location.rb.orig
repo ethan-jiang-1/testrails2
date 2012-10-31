@@ -8,12 +8,23 @@
 #  longitude  :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+<<<<<<< HEAD
+=======
 #  name       :string(255)
+>>>>>>> 58ebdd2be834bcb4b09efbc22a519ca0ae1bd08c
 #
 
 class Location < ActiveRecord::Base
-  attr_accessible :address, :latitude, :longitude
+  attr_accessible :name, :address, :latitude, :longitude
   geocoded_by :address
+<<<<<<< HEAD
+  after_validation :check_geocode, :if => :address_changed?
+
+  private
+  def check_geocode
+    :geocode
+  end
+=======
   after_validation :geocode, :if => :address_changed?
 
 
@@ -26,4 +37,5 @@ class Location < ActiveRecord::Base
 
   #has_many :subordinates, :class_name => "LocationRelation",  :foreign_key => "loc_from_id"
 
+>>>>>>> 58ebdd2be834bcb4b09efbc22a519ca0ae1bd08c
 end
