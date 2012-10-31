@@ -13,5 +13,6 @@
 class Order < ActiveRecord::Base
   belongs_to :customer, :inverse_of => :orders
 
+  attr_accessible :product
   attr_accessible :order_date, :product
 end
