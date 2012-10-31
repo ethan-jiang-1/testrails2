@@ -1,5 +1,5 @@
 development: &default
-  adapter: <%= RUBY_PLATFORM =~ /java/ ? 'jdbcmysql2' : 'mysql2' %>
+  adapter: <%= RUBY_PLATFORM =~ /java/ ? 'jdbcmysql' : 'mysql' %>
   #adapter: mysql2
   encoding: utf8
   database: TestRails2_development
