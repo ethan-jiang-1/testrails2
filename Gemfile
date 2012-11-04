@@ -22,23 +22,7 @@ group :test, :development do
 end
 
 
-group :active_record do
-  platforms :jruby do
-    #gem 'activerecord-mysql2-adapter'
-    gem 'activerecord-jdbcmysql-adapter'
-    #gem 'mysql'
-    #gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
-    #gem "jdbc-sqlite3"  #, :platforms => :jruby
-    gem "jruby-openssl" #, :platforms => :jruby
-  end
-  platforms :ruby, :mswin, :mingw do
-    #gem 'sqlite3'
-    #gem 'activerecord-mysql2-adapter'
-    #gem 'mysql2'
-    gem 'mysql'
-  end
-end
-
+gem 'mysql2'
 
 gem 'geocoder'
 gem 'gmaps4rails'
