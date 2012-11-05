@@ -1,7 +1,5 @@
-development: &default
-  #adapter: <%= RUBY_PLATFORM =~ /java/ ? 'jdbcmysql' : 'mysql' %>
-  #adapter: mysql2
-  adapter: pg
+development:
+  adapter: mysql2
   encoding: utf8
   database: TestRails2_development
   host: localhost
@@ -9,9 +7,7 @@ development: &default
   password: ""
 
 test:
-  #adapter: <%= RUBY_PLATFORM =~ /java/ ? 'jdbcmysql' : 'mysql' %>
-  #adapter: mysql2
-  adapter: pg
+  adapter: mysql2
   encoding: utf8
   database: TestRails2_test
   host: localhost
@@ -19,11 +15,17 @@ test:
   password: ""
 
 production:
-  #adapter: <%= RUBY_PLATFORM =~ /java/ ? 'jdbcmysql' : 'mysql' %>
-  #adapter: mysql2
-  adapter: pg
+  adapter: mysql2
   encoding: utf8
   database: TestRails2_production
   host: localhost
   username: rails
   password: ""
+
+
+
+# possible adapters
+#  jdbcmysql - jruby sql
+#  mysql     - MRI
+#  mysql2    - MRI
+#  pg        - MRI
