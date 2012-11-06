@@ -1,0 +1,18 @@
+<h3> Database.yml </h3>
+<pre>
+<% filenameD = Rails.root.join('config','database.yml') %>
+<%= IO.read(filenameD) %>
+</pre>
+
+<h3> Gemfile </h3>
+<pre>
+<% filenameG = Rails.root.join('Gemfile') %>
+<%= IO.read(filenameG) %>
+</pre>
+
+
+<h3> Gemfile.lock </h3>
+<pre>
+<% filenameGL = Rails.root.join('Gemfile.lock') %>
+<%= IO.read(filenameGL) %>
+</pre>
