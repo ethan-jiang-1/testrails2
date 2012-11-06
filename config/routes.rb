@@ -10,6 +10,7 @@ TestRails2::Application.routes.draw do
 
   get "home/index"
   get "home/search"
+  get "home/environment"
 
   root :to => "home#index"
 

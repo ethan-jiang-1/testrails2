@@ -1,0 +1,12 @@
+<h3> Environment variables <h3>
+<%
+		msg = ""
+		env_hash = ENV.to_hash
+		env_hash_sort = env_hash.sort_by{|key,value| key}
+		env_hash_sort.each do |x,y|
+			msg += "#{x} = #{y}\n"
+		end
+%>
+<pre>
+<%= msg %>
+</pre>
