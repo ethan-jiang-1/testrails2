@@ -10,7 +10,9 @@
 #
 
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :phone
+  attr_accessible :name, :phone, :company
+
+  belongs_to :company
 
   has_many :orders, :inverse_of => :customer
 end
