@@ -1,16 +1,20 @@
-<h2>Listing customers</h2>
+<h3>Listing customers</h3>
 
 <table class="table table-hover">
   <tr class="container-fluid">
-    <th class="span4">Name</th>
-    <th class="span4">Phone</th>
+    <th class="span2">Name</th>
+    <th class="span2">Phone</th>
+    <th class="span2">Company</th>
+    <th class="span2">Role(s)</th>
     <th class="span4"></th>
   </tr>
 
 <% @customers.each do |customer| %>
   <tr class="container-fluid">
-    <td class="span4"><%= customer.name %></td>
-    <td class="span4"><%= customer.phone %></td>
+    <td class="span2"><%= customer.name %></td>
+    <td class="span2"><%= customer.phone %></td>
+    <td class="span2"><%= customer.company_id %></td>
+    <td class="span2"><%= customer.role_ids %></td>
     <td class="span4">
       <%= link_to 'Show', customer, :class => "btn" %>
       <%= link_to 'Edit', edit_customer_path(customer), :class => "btn" %>

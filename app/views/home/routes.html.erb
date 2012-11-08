@@ -1,0 +1,12 @@
+<h2> Routes </h2>
+
+<%
+  require "pp"
+  sRT =""
+  #PP.pp(Rails.application.routes.routes,sRT)
+%>
+<pre>
+<% Rails.application.routes.routes.ast.to_s.split('|').sort.each do |x| %>
+<%= x %>
+<% end %>
+</pre>

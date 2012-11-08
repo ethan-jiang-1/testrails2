@@ -23,23 +23,6 @@ end
 
 gem "pg"
 
-group :active_record do
-  platforms :jruby do
-    #gem 'activerecord-mysql2-adapter'
-    #gem 'activerecord-jdbcmysql-adapter'
-    #gem 'mysql'
-    #gem "activerecord-jdbcsqlite3-adapter" #, :platforms => :jruby
-    #gem "jdbc-sqlite3"  #, :platforms => :jruby
-    #gem "jruby-openssl" #, :platforms => :jruby
-  end
-  platforms :ruby, :mswin, :mingw do
-    #gem 'sqlite3'
-    #gem 'activerecord-mysql2-adapter'
-    #gem 'mysql2'
-    #gem 'mysql'
-  end
-end
-
 
 gem 'geocoder'
 gem 'gmaps4rails'
@@ -48,5 +31,7 @@ gem 'json'
 gem "fastercsv"
 gem "rails_admin"
 gem "devise"
+gem "awesome_print"
+gem "simple_form"
 
 gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby
