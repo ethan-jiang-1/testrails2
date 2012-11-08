@@ -32,5 +32,6 @@ gem "fastercsv"
 gem "rails_admin"
 gem "devise"
 gem "awesome_print"
+gem "simple_form"
 
 gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby
