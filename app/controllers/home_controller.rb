@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
   def environment
   end
+
+  def routes
+  end
 end
