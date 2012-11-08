@@ -1,5 +1,7 @@
 TestRails2::Application.routes.draw do
 
+  resources :roles
+
   resources :companies
 
   resources :locations

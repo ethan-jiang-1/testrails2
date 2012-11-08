@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108053227) do
+ActiveRecord::Schema.define(:version => 20121108094048) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20121108053227) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "customer_role_relations", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "role_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "customer_role_relations", ["customer_id"], :name => "index_customer_role_relations_on_customer_id"
+  add_index "customer_role_relations", ["role_id"], :name => "index_customer_role_relations_on_role_id"
+
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "phone"
@@ -54,6 +64,16 @@ ActiveRecord::Schema.define(:version => 20121108053227) do
     t.datetime "updated_at", :null => false
     t.integer  "company_id"
   end
+
+  create_table "customers_roles", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "role_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "customers_roles", ["customer_id"], :name => "index_customers_roles_on_customer_id"
+  add_index "customers_roles", ["role_id"], :name => "index_customers_roles_on_role_id"
 
   create_table "employees", :force => true do |t|
     t.string   "name"
