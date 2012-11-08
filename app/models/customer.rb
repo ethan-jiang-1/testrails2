@@ -10,7 +10,7 @@
 #
 
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :phone, :company
+  attr_accessible :name, :phone, :company_id
 
   belongs_to :company
 

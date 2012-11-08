@@ -1,5 +1,7 @@
 TestRails2::Application.routes.draw do
 
+  resources :companies
+
   resources :locations
   resources :gmap_users
 
