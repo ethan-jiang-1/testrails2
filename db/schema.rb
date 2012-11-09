@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030075310) do
+ActiveRecord::Schema.define(:version => 20121108094048) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -40,18 +40,44 @@ ActiveRecord::Schema.define(:version => 20121030075310) do
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
 
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "customer_role_relations", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "role_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "customer_role_relations", ["customer_id"], :name => "index_customer_role_relations_on_customer_id"
+  add_index "customer_role_relations", ["role_id"], :name => "index_customer_role_relations_on_role_id"
+
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "phone"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "company_id"
   end
+
+  create_table "customers_roles", :id => false, :force => true do |t|
+    t.integer "customer_id"
+    t.integer "role_id"
+  end
+
+  add_index "customers_roles", ["customer_id"], :name => "index_customers_roles_on_customer_id"
+  add_index "customers_roles", ["role_id"], :name => "index_customers_roles_on_role_id"
 
   create_table "employees", :force => true do |t|
     t.string   "name"
+    t.integer  "manager_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "manager_id"
   end
 
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
@@ -157,6 +183,12 @@ ActiveRecord::Schema.define(:version => 20121030075310) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "user_admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

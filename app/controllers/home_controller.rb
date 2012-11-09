@@ -4,4 +4,10 @@ class HomeController < ApplicationController
 
   def search
   end
+
+  def environment
+  end
+
+  def routes
+  end
 end

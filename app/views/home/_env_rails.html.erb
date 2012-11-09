@@ -1,0 +1,23 @@
+<h3> Rails Info </h3>
+<% require "awesome_print" %>
+<%= ap(Rails::Info).html_safe %>
+
+
+<%
+  require "pp"
+  sRC =""
+  PP.pp(Rails.configuration,sRC)
+%>
+<h3> Rails Configuration - All </h3>
+<pre>
+<%= sRC %>
+</pre>
+
+
+<h3> Rails Configuration - Database </h3>
+<pre>
+<%= "Rails.env = " + Rails.env %>
+<% Rails.configuration.database_configuration[Rails.env].each do |k,v| %>
+<%= "#{k}=#{v}" %>
+<% end %>
+</pre>

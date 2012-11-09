@@ -1,5 +1,9 @@
 TestRails2::Application.routes.draw do
 
+  resources :roles
+
+  resources :companies
+
   resources :locations
   resources :gmap_users
 
@@ -10,6 +14,8 @@ TestRails2::Application.routes.draw do
 
   get "home/index"
   get "home/search"
+  get "home/environment"
+  get "home/routes"
 
   root :to => "home#index"
 

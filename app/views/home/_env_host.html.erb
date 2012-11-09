@@ -1,0 +1,6 @@
+<h3> Host </h3>
+<pre>
+<% require 'socket'%>
+<%= "host name: " + Socket.gethostname %>
+<%= "host IP  : " + Socket.ip_address_list.to_s %>
+</pre>

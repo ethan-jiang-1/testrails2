@@ -1,23 +1,24 @@
 development:
-  adapter: pg
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_development
   host: localhost
   username: rails
-  password:
+  password: rails
 
 test:
-  adapter: pg
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_test
   host: localhost
   username: rails
-  password:
+  password: rails
+
 
 production:
-  adapter: pg
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_production
   host: localhost
   username: rails
-  password: 
+  password: rails
