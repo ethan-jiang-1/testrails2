@@ -12,7 +12,7 @@
  *= xrequire customers
  *= xrequire home
  *= xrequire orders
- *= require scaffolds
- *= require gmaps4rails
+ *= xrequire scaffolds
+ *= xrequire gmaps4rails
  *= require_tree .
  */
