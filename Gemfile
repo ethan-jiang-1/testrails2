@@ -22,6 +22,7 @@ group :test, :development do
 end
 
 
+
 #jquery
 gem 'jquery-rails'
 
@@ -32,7 +33,7 @@ gem "less-rails"                # sprockets (what rails 3.1 uses for its asset p
 gem "twitter-bootstrap-rails"
 
 #db
-gem 'mysql2'
+gem "pg"
 
 gem 'geocoder'
 gem 'gmaps4rails'

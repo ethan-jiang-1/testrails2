@@ -1,32 +1,27 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_development
   host: localhost
   username: rails
-  password: ""
-  socket: /var/run/mysqld/mysqld.sock
-  reconnect: false
-  pool: 5
+  password: rails
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_test
   host: localhost
   username: rails
-  password: ""
-  socket: /var/run/mysqld/mysqld.sock
-  reconnect: false
-  pool: 5
+  password: rails
+
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: TestRails2_production
   host: localhost
   username: rails
-  password: ""
+  password: rails 
 
 
 # possible adapters

@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
 
   create_table "employees", :force => true do |t|
     t.string   "name"
+    t.integer  "manager_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "manager_id"
   end
 
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
