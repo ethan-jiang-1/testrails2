@@ -65,11 +65,9 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
     t.integer  "company_id"
   end
 
-  create_table "customers_roles", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "role_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "customers_roles", :id => false, :force => true do |t|
+    t.integer "customer_id"
+    t.integer "role_id"
   end
 
   add_index "customers_roles", ["customer_id"], :name => "index_customers_roles_on_customer_id"
