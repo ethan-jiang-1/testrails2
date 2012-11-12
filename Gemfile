@@ -26,14 +26,14 @@ end
 gem 'jquery-rails'
 
 #bootstrap
-gem "therubyracer"              #google v8 embedded within Ruby
+#gem "therubyrhino"             #rhio engine - good for jruby
+gem "therubyracer"              #google v8 embedded within Ruby - good for MRI
 gem "less-rails"                # sprockets (what rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 
 #db
 gem 'mysql2'
 
-#misc
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'json'
@@ -42,8 +42,5 @@ gem "rails_admin"
 gem "devise"
 gem "awesome_print"
 gem "simple_form"
-
-
-
 
 gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby
