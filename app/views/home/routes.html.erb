@@ -1,12 +1,28 @@
 <h2> Routes </h2>
 
+<!--
 <%
   require "pp"
   sRT =""
   #PP.pp(Rails.application.routes.routes,sRT)
 %>
 <pre>
-<% Rails.application.routes.routes.ast.to_s.split('|').sort.each do |x| %>
+< %= #sRT %>
+</pre>
+<%
+  #s = ""
+  #PP.pp(y,s)
+%>
+-->
+
+<pre>
+<dl class="dl-horizontal">
+<% Rails.application.routes.routes.named_routes.each do |x,y| %><dt><%= x %><dt><dd><%= y.required_defaults %>  <%= y.verb %></dd><% end %>
+<dl>
+</pre>
+
+<pre>
+<% Rails.application.routes.routes.ast.to_s.split('|').uniq.sort.each do |x| %>
 <%= x %>
 <% end %>
 </pre>

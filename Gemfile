@@ -8,8 +8,8 @@ gem 'rails', '3.2.8'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   gem 'uglifier', '>= 1.0.3'
+
   gem "rails_admin"
 end
 
@@ -21,12 +21,22 @@ group :test, :development do
   gem "capybara"
 end
 
-gem "pg"
 
+
+#jquery
+gem 'jquery-rails'
+
+#bootstrap
+#gem "therubyrhino"             #rhio engine - good for jruby
+gem "therubyracer"              #google v8 embedded within Ruby - good for MRI
+gem "less-rails"                # sprockets (what rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
+#db
+gem "pg"
 
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'jquery-rails'
 gem 'json'
 gem "fastercsv"
 gem "rails_admin"

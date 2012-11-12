@@ -7,6 +7,7 @@
 #  phone      :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  company_id :integer
 #
 
 require 'spec_helper'

@@ -21,4 +21,10 @@ production:
   database: TestRails2_production
   host: localhost
   username: rails
-  password: rails
+  password: rails 
+
+
+# possible adapters
+#  mysql      - MRI, jruby
+#  mysql2     - MRI
+#  postgresql - MRI
