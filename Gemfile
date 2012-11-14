@@ -46,6 +46,7 @@ gem 'json'
 gem "fastercsv"                 #csv: mime type for Comma_separated Values
 gem "awesome_print"
 gem "simple_form"
+gem "bootstrap-datepicker-rails"
 
 #plugins
 gem "rails_admin"
