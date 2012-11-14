@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :order do
-    sequence(:product) {|n| "prd#{n}" }
+    sequence(:details) {|n| "details#{n}" }
     order_date Date::today
   end
 end

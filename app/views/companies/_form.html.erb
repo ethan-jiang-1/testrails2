@@ -3,7 +3,8 @@
 <div>
     <%= f.input :name %>
     <div class="control-group">
-      <%= f.label :location %>
+      <!-- %= f.label :location %-->
+      <label class="string optional control-label" for="location_id"> Location </label>
       <div class="controls"><%= f.collection_select :location_id, Location.all, :id, :address %></div>
     </div>
 </div>

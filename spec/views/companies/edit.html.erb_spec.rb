@@ -4,7 +4,7 @@ describe "companies/edit" do
   before(:each) do
     @company = assign(:company, stub_model(Company,
       :name => "MyString",
-      :location => "MyString"
+      :location_id => 1
     ))
   end
 
@@ -14,7 +14,7 @@ describe "companies/edit" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => companies_path(@company), :method => "post" do
       assert_select "input#company_name", :name => "company[name]"
-      assert_select "input#company_location", :name => "company[location]"
+      assert_select "select#company_location_id", :name => "company[location_id]"
     end
   end
 end
