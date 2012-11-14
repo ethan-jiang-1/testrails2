@@ -1,19 +1,17 @@
+<h3> Details of the order </h3>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Order date:</b>
-  <%= @order.order_date %>
-</p>
-
-<p>
-  <b>Product:</b>
-  <%= @order.product %>
-</p>
-
-<p>
-  <b>Customer:</b>
-  <%= @order.customer %>
-</p>
+<dl class="dl-horizontal">
+  <dt>Order date:</dd>
+  <dd><%= @order.order_date %></dd>
+  <dt>Track_no:</dt>
+  <dd><%= @order.track_no %></dd>
+  <dt>Details:</dt>
+  <dd><%= @order.details %></dd>
+  <dt>Customer:</dt>
+  <dd><%= @order.customer %></dd>
+</dl>
 
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

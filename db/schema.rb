@@ -130,9 +130,10 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
 
   create_table "orders", :force => true do |t|
-    t.date     "order_date"
-    t.string   "product"
+    t.string   "track_no"
+    t.string   "details"
     t.integer  "customer_id"
+    t.date     "order_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
