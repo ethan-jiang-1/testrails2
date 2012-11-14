@@ -10,6 +10,7 @@
 #
 
 class Company < ActiveRecord::Base
-  attr_accessible :location, :name
+  attr_accessible :name, :location_id
   has_many :customers
+  has_one :location
 end
