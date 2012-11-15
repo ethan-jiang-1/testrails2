@@ -59,6 +59,12 @@ module TestRails2
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    #Yizhen extra asset required for precompile
+    config.assets.precompile += ['application_heavy.css']
+    config.assets.precompile += ['application_heavy.js']
+    config.assets.precompile += ['application_light.css']
+    config.assets.precompile += ['application_light.js']
+
     #Yizhen for the sake of using rails_admin (to Heroku)
     config.assets.initialize_on_precompile = false
   end

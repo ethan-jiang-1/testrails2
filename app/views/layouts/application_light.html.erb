@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> <%= page_title_name %></title>
+  <%= stylesheet_link_tag    "application_light", :media => "all" %>
+  <%= javascript_include_tag "application_light" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

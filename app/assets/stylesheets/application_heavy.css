@@ -10,4 +10,7 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= require bootstrap-datepicker
+ *= require gmaps4rails
+ *= require_tree .
  */

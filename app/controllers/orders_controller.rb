@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  layout "application_heavy"
   #before_filter :authenticate_user_admin, :except => [:show, :index]
 
   # GET /orders
