@@ -28,6 +28,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @order.track_no = UUIDTools::UUID.timestamp_create.to_s
 
     respond_to do |format|
       format.html # new.html.erb

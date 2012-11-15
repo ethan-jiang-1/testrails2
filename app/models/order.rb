@@ -20,4 +20,17 @@ class Order < ActiveRecord::Base
   attr_accessible :customer_id
 
   has_many :products
+
+  validate :order_date_is_date?
+  validates_presence_of :details
+
+  private
+
+  def order_date_is_date?
+    if !order_date.is_a?(Date)
+      errors.add(:order_date, 'must be a valid date')
+    end
+  end
+
+  #validates :order_date, :date => {:after => Date.today, :message => 'must be after today'}, :on => :create
 end
