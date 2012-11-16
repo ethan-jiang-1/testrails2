@@ -39,13 +39,17 @@ gem 'jquery-rails'
 #db
 gem 'mysql2'
 
-#utilities
+#utilities - backend
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'json'
 gem "fastercsv"                 #csv: mime type for Comma_separated Values
 gem "awesome_print"
 gem "simple_form"
+gem "uuidtools"
+
+
+#utilities - back/frontend
 gem "bootstrap-datepicker-rails"
 
 #plugins

@@ -14,3 +14,7 @@
 /log/*.log
 /tmp
 
+
+# Ignore some Rubymine setting files
+/.idea/*
+!/.idea/*.iml

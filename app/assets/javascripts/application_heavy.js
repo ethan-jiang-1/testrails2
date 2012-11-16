@@ -16,4 +16,4 @@
 //= require_self
 //= require bootstrap-datepicker
 //= require_directory ./gmaps4rails
-//= require_tree .
+//= require orders
