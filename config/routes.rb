@@ -19,6 +19,13 @@ TestRails2::Application.routes.draw do
 
   root :to => "home#index"
 
+  get "test/bootstrap_base_css"
+  get "test/bootstrap_components"
+  get "test/bootstrap_customize"
+  get "test/bootstrap_javascript"
+  get "test/bootstrap_scaffolding"
+
+
   resources :orders
 
   resources :customers
