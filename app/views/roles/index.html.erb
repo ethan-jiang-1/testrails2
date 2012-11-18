@@ -14,6 +14,16 @@
 <% end %>
 </table>
 
+<br/>
+
+<%= link_to "Show all (Ajax: within green div below)", roles_path, :remote => true  %>
+<div id='roles_dynamic' class="alert alert-success">
+  The line will be replaced...
+</div>
+
 <br />
+
+
+
 
 <%= link_to 'New Role', new_role_path , :class => 'btn btn-inverse'%>
