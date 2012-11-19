@@ -51,6 +51,7 @@ gem "uuidtools"
 
 #utilities - back/frontend
 gem "bootstrap-datepicker-rails"
+#gem "in_place_editing"
 
 #plugins
 gem "rails_admin"

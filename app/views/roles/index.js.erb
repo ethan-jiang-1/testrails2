@@ -1,4 +1,23 @@
-//$("#toggle").html("Showing < %= link_text %> (toggle)");
-//$("#toggle").attr("href", "< %= href %>");
-//$("#role").html('< %= escape_javascript(render @roles) % >');
-$("#roles_dynamic").html("hello from index.js.erb");
+<%
+   ul_head_html = "<dl class=\'dl-horizontal\'>"
+   ul_body_html = ""
+%>
+<% @roles.sort.each do |role| %>
+ <%
+    remove_hyperlink = link_to ' Destroy', role, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn icon-remove'
+
+    edit_submit = button_tag " Edit", class: 'btn icon-edit'
+
+
+    ul_body_html += form_tag role, :remote => true, :method => :put
+    ul_body_html += "<dt>" + text_field_tag('role[name]', role.name) + " </dt> " + "<dd> " + edit_submit + " " + remove_hyperlink + " </dd>"
+    ul_body_html += "</form>"
+    ul_body_html = ul_body_html.gsub("\"","\'")
+  %>
+<% end %>
+<%
+   ul_body_html += "</dl>"
+   ul_all_html = ul_head_html + ul_body_html
+%>
+
+$("#roles_dynamic").html("<%= ul_all_html.html_safe %>");

@@ -1,4 +1,8 @@
 class RolesController < ApplicationController
+  layout "application_heavy"
+
+  #in_place_edit_for :role, :name
+
   # GET /roles
   # GET /roles.json
   def index
@@ -30,6 +34,7 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @role }
+      format.js  # renders new.js.erb
     end
   end
 
@@ -63,9 +68,11 @@ class RolesController < ApplicationController
       if @role.update_attributes(params[:role])
         format.html { redirect_to @role, notice: 'Role was successfully updated.' }
         format.json { head :no_content }
+        format.js {render js: "index" }
       else
         format.html { render action: "edit" }
         format.json { render json: @role.errors, status: :unprocessable_entity }
+        format.js {render js: "index" }
       end
     end
   end
@@ -79,6 +86,7 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to roles_url }
       format.json { head :no_content }
+      format.js {render js: "index" }
     end
   end
 end

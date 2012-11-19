@@ -17,3 +17,4 @@
 //= require bootstrap-datepicker
 //= require_directory ./gmaps4rails
 //= require orders
+//= require roles
