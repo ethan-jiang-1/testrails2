@@ -34,7 +34,6 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @role }
-      format.js  # renders new.js.erb
     end
   end
 
@@ -86,7 +85,7 @@ class RolesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to roles_url }
       format.json { head :no_content }
-      format.js {render js: "index" }
+      format.js
     end
   end
 end
