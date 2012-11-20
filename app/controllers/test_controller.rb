@@ -15,4 +15,10 @@ end
 def bootstrap_customize
 end
 
+def jquery_basic
+end
+
+def ujs_basic
+end
+
 end

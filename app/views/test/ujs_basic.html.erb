@@ -1,0 +1,25 @@
+<h3> ujs_basic </h3>
+
+<ul>
+ <li> <a href="#" onclick="alert('Hello world!'); return false;">Click Here (normal)</a></li>
+ <li> <a href="#" id="alert1">Click Here (jquery script un-attached)</a> </li>
+ <li> <a href="#" id="alert2" data-message="Hello from UJS">Click Here (jquery script un-attached with message)</a>
+</ul>
+
+
+
+<script type="text/javascript"charset="UTF-8">
+  $(function () {
+    $('#alert1').click(function () {
+      alert('Hello, world!');
+      return false;
+    })
+  });
+
+  $(function () {
+  $('#alert2').click(function () {
+    alert(this.getAttribute('data-message'));
+    return false;
+   })
+  });
+</script>

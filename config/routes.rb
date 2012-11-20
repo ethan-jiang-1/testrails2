@@ -26,6 +26,8 @@ TestRails2::Application.routes.draw do
   get "test/bootstrap_customize"
   get "test/bootstrap_javascript"
   get "test/bootstrap_scaffolding"
+  get "test/jquery_basic"
+  get "test/ujs_basic"
 
 
   resources :orders
