@@ -1,0 +1,1 @@
+$('#ajax-response').html("<p>new post created ! <p> ").append("<h5><%= escape_javascript("name: " + @post.name) %></h5>").append("<h6><%= escape_javascript("title: "+ @post.title) %></h6>").append("<%= escape_javascript("content: " + @post.content) %>");  
