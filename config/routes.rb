@@ -34,6 +34,8 @@ TestRails2::Application.routes.draw do
 
   resources :customers
 
+  resources :products
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
