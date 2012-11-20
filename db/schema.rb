@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108094048) do
+ActiveRecord::Schema.define(:version => 20121120005936) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -164,6 +164,14 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
     t.string   "imageable_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "products", :force => true do |t|
