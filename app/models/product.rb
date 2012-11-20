@@ -6,6 +6,8 @@
 #  name       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  category   :string(255)
+#  price      :float
 #
 
 class Product < ActiveRecord::Base
