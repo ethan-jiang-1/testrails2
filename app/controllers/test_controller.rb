@@ -19,6 +19,9 @@ class TestController < ApplicationController
   def jquery_basic
   end
 
+  def jquery_ui_basic
+  end
+
   def ujs_basic
   end
 

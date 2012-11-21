@@ -35,6 +35,7 @@ end
 
 #jquery
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 #db
 gem 'mysql2'
