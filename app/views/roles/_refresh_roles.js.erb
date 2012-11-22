@@ -1,24 +1,25 @@
 <%
    @roles_all = Role.all
-   ul_head_html = "<dl class=\'dl-horizontal\'>"
-   ul_body_html = ""
+
+   tb_head_html = "<table class=\'table-hover table-condensed \'>"
+   tb_body_html = ""
 %>
 <% @roles_all.each do |role| %>
- <%
-    remove_hyperlink = link_to ' Destroy', role, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn icon-remove', remote: true
+<%
+    btn_remove = link_to ' Remove', role, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-small icon-remove', remote: true
+    btn_update = button_tag " Update", class: 'btn btn-small icon-refresh'
 
-    edit_submit = button_tag " Update", class: 'btn icon-refresh'
 
-
-    ul_body_html += form_tag role, :remote => true, :method => :put
-    ul_body_html += "<dt>" + text_field_tag('role[name]', role.name) + " </dt> " + "<dd> " + edit_submit + " " + remove_hyperlink + " </dd>"
-    ul_body_html += "</form>"
-    ul_body_html = ul_body_html.gsub("\"","\'")
+    tb_body_html += "<tr><td>"
+    tb_body_html += form_tag role, :remote => true, :method => :put, :class => "form-inline", :style => "margin:0;padding:0;display:inline"
+    tb_body_html += "<div style='margin:0;padding:0;display:inline'>" + text_field_tag('role[name]', role.name) + " " + btn_update + " " + btn_remove + "</div>"
+    tb_body_html += "</form></td></tr>"
+    tb_body_html = tb_body_html.gsub("\"","\'")
   %>
 <% end %>
 <%
-   ul_body_html += "</dl>"
-   ul_all_html = ul_head_html + ul_body_html
+   tb_body_html += "</table>"
+   tb_all_html = tb_head_html + tb_body_html
 %>
 
-$("#roles_dynamic").html("<%= ul_all_html.html_safe %>");
+$("#roles_dynamic").html("<%= tb_all_html.html_safe %>");
