@@ -1,0 +1,52 @@
+<h3> jquery_basic </h3>
+
+<p id="p_message" class="alert alert-success"> </p>
+
+
+<!-- basic -->
+
+<h4> Test: Chain of response of click on anchor </h4>
+<ul>
+<li><a id="a_preventDefault" href="http://www.google.com">Link to google</a> </li>
+<li><a href="/">Link to home</a> </li>
+<li><a id="a_normalStyle" href="#"> Remove Bold in links here </a> </li>
+<li><a id="a_longGet" href="#"> A Long Get (/roles.json) </a> </li>
+<li><a id="a_toggle" href="#"> Toggle message below </a>  <span id="p_toggle" > A message can be toggled </span> </li>
+</ul>
+
+
+<script>
+ //$(document).ready(function(){
+$(function(){
+
+   //alert("hello");
+   $("a").addClass("test");
+
+   $("a").click(function(event){
+     $('#p_message').html("Thanks for visiting! - <a> has been hooked ");
+   });
+
+   $("#a_preventDefault").click(function(event){
+     alert("As you can see, the link no longer took you to origin url");
+     event.preventDefault();
+   });
+
+   $("#a_normalStyle").click(function(event){
+      $("a").removeClass("test");
+      $(this).hide("slow");
+   });
+
+   $("#a_longGet").click(function(event){
+      alert("start long get");
+      $.get('/roles.json', function(data){
+        alert("done long get: \n" + data );
+      });
+   });
+
+   $("#a_toggle").click(function(event){
+      $("#p_toggle").toggle("slow");
+      //alert("hi");
+   });
+});
+
+</script>

@@ -1,7 +1,7 @@
 <%= simple_form_for(@order, :html => {:class => 'form-horizontal'}) do |f| %>
   <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+      <h4><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h4>
 
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
@@ -11,14 +11,38 @@
     </div>
   <% end %>
 
-  <%= f.input :order_date %>
-  <%= f.input :product %>
-<!--
+  <div class="control-group float optional">
+      <%= f.label :track_no %>
+      <div class="controls">
+          <%= f.input_field :track_no, :readonly => true, :class => 'input-xlarge' %>
+      </div>
+  </div>
+  <!-- <%= f.input :track_no %> -->
+
+  <%= f.input :details %>
+  <!--
   <%= f.hint 'No special characters in product name, please!' %>
   <%= f.error :product, :id => 'product_error' %>
   <%= f.full_error :token %>
--->
+  -->
+
   <%= f.association :customer, :collection => Company.all(:order => 'name'), :prompt => "Choose a Company" %>
-  <%= f.button :submit %>
+
+  <!-- %= f.input :order_date %-->
+  <div class="control-group">
+    <%= f.label :order_date %>
+    <div class="controls">
+      <!-- <input type="text" id="order_date" name="order[order_date]" data-behaviour='datepicker' value="2012-10-01"> -->
+      <!-- %= f.input_field :order_date, html: {databe-haviour: 'datepicker'} % -->
+      <div class="input-append date"  data-behaviour='datepicker'>
+      <input class="span2" size="16" type="text" value="2012-10-01" id="order_date" name="order[order_date]">
+      <span class="add-on"><i class="icon-th"></i></span>
+    </div>
+
+    </div>
+  </div>
+
+
+  <%= f.button :submit, :class => 'btn btn-inverse' %>
 
 <% end %>

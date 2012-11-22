@@ -1,9 +1,10 @@
-<h1>Listing orders</h1>
+<h3>Listing orders</h3>
 
 <table class="table">
   <tr>
     <th>Order date</th>
-    <th>Product</th>
+    <th>Track_no</th>
+    <th>Details</th>
     <th>Customer</th>
     <th></th>
     <th></th>
@@ -13,7 +14,8 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.order_date %></td>
-    <td><%= order.product %></td>
+    <td><%= order.track_no %></td>
+    <td><%= order.details %></td>
     <td><%= order.customer %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
@@ -24,4 +26,4 @@
 
 <br />
 
-<%= link_to 'New Order', new_order_path, :class=>"btn" %>
+<%= link_to 'New Order', new_order_path, :class => 'btn btn-inverse' %>

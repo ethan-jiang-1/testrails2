@@ -1,5 +1,9 @@
 TestRails2::Application.routes.draw do
 
+  resources :comments
+
+  resources :posts
+
   resources :roles
 
   resources :companies
@@ -19,9 +23,21 @@ TestRails2::Application.routes.draw do
 
   root :to => "home#index"
 
+  get "test/bootstrap_base_css"
+  get "test/bootstrap_components"
+  get "test/bootstrap_customize"
+  get "test/bootstrap_javascript"
+  get "test/bootstrap_scaffolding"
+  get "test/jquery_basic"
+  get "test/jquery_ui_basic"
+  get "test/ujs_basic"
+
+
   resources :orders
 
   resources :customers
+
+  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

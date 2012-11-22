@@ -1,13 +1,11 @@
 <%= simple_form_for(@location,:html => {:class => 'form-horizontal'}) do |f| %>
   <div class="control-group float optional">
-  <%= f.label :address %>
-
-  <div class="controls">
-  <%= f.input_field :address, :class => 'input-xxlarge' %><span class="help-inline"> The detail mailing address, not email address</span>
+      <%= f.label :address %>
+      <div class="controls">
+          <%= f.input_field :address, :class => 'input-xxlarge' %><span class="help-inline"> The detail mailing address, not email address</span>
+      </div>
   </div>
-  </div>
-
   <%= f.input :latitude %>
   <%= f.input :longitude %>
-  <%= f.button :submit %>
+  <%= f.button :submit, :class => 'btn btn-inverse' %>
 <% end %>

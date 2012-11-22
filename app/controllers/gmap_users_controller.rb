@@ -1,4 +1,5 @@
 class GmapUsersController < ApplicationController
+  layout "application_heavy"
 
   # GET /gmap_users
   # GET /gmap_users.json

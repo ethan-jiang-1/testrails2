@@ -17,4 +17,9 @@ class Customer < ActiveRecord::Base
   has_and_belongs_to_many :roles
 
   has_many :orders, :inverse_of => :customer
+
+  validates_presence_of :name
+  validates_uniqueness_of :name
+  #validates_format_of :phone, :with => /\(?\b([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})\b/i , :on => :create
+
 end

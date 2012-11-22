@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108094048) do
+ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -40,11 +40,17 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
 
-  create_table "companies", :force => true do |t|
-    t.string   "name"
-    t.string   "location"
+  create_table "comments", :force => true do |t|
+    t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.integer  "location_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "customer_role_relations", :force => true do |t|
@@ -130,9 +136,10 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
 
   create_table "orders", :force => true do |t|
-    t.date     "order_date"
-    t.string   "product"
+    t.string   "track_no"
+    t.string   "details"
     t.integer  "customer_id"
+    t.date     "order_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -165,10 +172,20 @@ ActiveRecord::Schema.define(:version => 20121108094048) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "category"
+    t.float    "price"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

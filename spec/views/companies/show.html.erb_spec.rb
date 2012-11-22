@@ -4,7 +4,7 @@ describe "companies/show" do
   before(:each) do
     @company = assign(:company, stub_model(Company,
       :name => "Name",
-      :location => "Location"
+      :location_id => 1
     ))
   end
 

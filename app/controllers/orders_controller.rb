@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  layout "application_heavy"
   #before_filter :authenticate_user_admin, :except => [:show, :index]
 
   # GET /orders
@@ -27,6 +28,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @order.track_no = UUIDTools::UUID.timestamp_create.to_s
 
     respond_to do |format|
       format.html # new.html.erb

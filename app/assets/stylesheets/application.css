@@ -9,10 +9,5 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= xrequire customers
- *= xrequire home
- *= xrequire orders
- *= xrequire scaffolds
- *= xrequire gmaps4rails
- *= require_tree .
+ *= require bootstrap_and_overrides
  */
