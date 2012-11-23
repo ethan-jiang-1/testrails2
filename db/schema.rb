@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.integer  "location_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "location"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "customer_role_relations", :force => true do |t|
@@ -136,10 +136,9 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
 
   create_table "orders", :force => true do |t|
-    t.string   "track_no"
-    t.string   "details"
-    t.integer  "customer_id"
     t.date     "order_date"
+    t.string   "product"
+    t.integer  "customer_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
