@@ -1,37 +1,9 @@
-<h3>Listing roles</h3>
+<h3>Listing roles (ajax js)</h3>
 
-<div style="background-color:#ccc">
-  <h4> Classic Plain Approach </h4>
-  <table class="table">
-    <tr>
-      <th class="span4">Name</th>
-      <th class="span8"></th>
-    </tr>
-
-  <% @roles.each do |role| %>
-    <tr>
-      <td class="span4"><%= role.name %></td>
-      <td class="span8"><%= link_to 'Show', role %>
-                        <%= link_to 'Edit', edit_role_path(role) %>
-                        <%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
-    </tr>
-  <% end %>
-  </table>
-
-  <br/>
-
-  <%= link_to 'New Role', new_role_path , :class => 'btn btn-inverse'%>
-
-</div>
-
-<hr>
-
-<div style="background-color:#ddd">
-  <h4> Ajax Dynamic Approach (js) </h4>
+<div>
   <div id='roles_dynamic' style="margin-left:10px">
   </div>
-  <br/>
+  <hr/>
   <%= link_to " Refresh Roles", roles_path, :class =>"btn icon-refresh", :remote => true, :id => "refresh-roles"  %>
   <!-- < %= link_to ' New Role', new_role_path , :class => 'btn icon-plus-sign', :remote => true % > -->
 
@@ -49,12 +21,15 @@
            <%=  form_tag '/roles', :remote => true, :method => :post %>
             <input id="new_role_name" type="text" name="role[name]" placeholder="name of new role"/>
             <br/>
-            <button class="btn btn-inverse" type="submit" onclick="javascript: $('#new_role_name_close').click(); $('#refresh-roles').click() " >Add New</button>
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-inverse" type="submit" onclick="javascript: $('#new_role_name_close').click(); setTimeout('refresh_after_submit()',100);" >Add New</button>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
            </form>
         </div>
         <script>
-
+            function refresh_after_submit()
+            {
+                $('#refresh-roles').click()
+            }
         </script>
     </div>
 </div>

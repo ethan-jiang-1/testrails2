@@ -1,14 +1,16 @@
 <h4>Listing products</h4>
 
-<%= form_tag products_path, :method => :get, :remote => true do %>
-  <p>
+<%= form_tag products_path, :method => :get, :remote => true, :class=>"form-inline" do %>
+  <div style="margin:0;padding:0;display:inline">
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
+  </div>
 <% end %>
 
 <div id="products">
+  <table class="table table-bordered table-hover">
   <%= render @products %>
+  </table>
 </div>
 
 

@@ -28,7 +28,7 @@ RailsAdmin.config do |config|
 
   # Exclude specific models (keep the others):
   # config.excluded_models = ['Appointment', 'Customer', 'Order', 'Patient', 'Physician']
-   config.excluded_models = ['GmapUser']
+   config.excluded_models = ['GmapUser','CustomersRoles','LocationRelation', 'AssemblyPart']
 
   # Include specific models (exclude the others):
   # config.included_models = ['Appointment', 'Customer', 'Order', 'Patient', 'Physician']
@@ -59,8 +59,7 @@ RailsAdmin.config do |config|
   ###  Appointment  ###
 
    config.model 'Appointment' do
-      weight -10
-
+        navigation_label 'PPA'
      # You can copy this to a 'rails_admin do ... end' block inside your appointment.rb model definition
 
      # Found associations:
@@ -115,7 +114,7 @@ RailsAdmin.config do |config|
   ###  Patient  ###
 
    config.model 'Patient' do
-        weight -11 #for sort the model in navigation bar
+        navigation_label 'PPA'
 
   #   # You can copy this to a 'rails_admin do ... end' block inside your patient.rb model definition
 
@@ -169,8 +168,7 @@ RailsAdmin.config do |config|
   ###  Physician  ###
 
    config.model 'Physician' do
-       weight -12 #for sort the model in navigation bar
-
+        navigation_label 'PPA'
   #   # You can copy this to a 'rails_admin do ... end' block inside your physician.rb model definition
 
   #   # Found associations:
@@ -216,5 +214,49 @@ RailsAdmin.config do |config|
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
    end
+
+
+
+  config.model 'Assembly' do
+    navigation_label 'AP'
+  end
+  config.model 'Part' do
+    navigation_label 'AP'
+  end
+
+  config.model 'Post' do
+    navigation_label 'Post'
+  end
+  config.model 'Comment' do
+    parent 'Post'
+    navigation_label 'Post'
+  end
+
+  config.model 'Role' do
+    navigation_label 'CCLRO'
+  end
+  config.model 'Location' do
+    navigation_label 'CCLRO'
+  end
+  config.model 'Company' do
+    navigation_label 'CCLRO'
+  end
+  config.model 'Customer' do
+    navigation_label 'CCLRO'
+  end
+  config.model 'Order' do
+    navigation_label 'CCLRO'
+  end
+
+  config.model 'Employee' do
+    navigation_label 'EPP'
+  end
+  config.model 'Product' do
+    navigation_label 'EPP'
+  end
+  config.model 'Picture' do
+    navigation_label 'EPP'
+  end
+
 
 end
