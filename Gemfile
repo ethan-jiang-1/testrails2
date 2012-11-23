@@ -57,3 +57,7 @@ gem "bootstrap-datepicker-rails"
 #plugins
 gem "rails_admin"
 gem "devise"
+
+
+#thin server
+gem "thin"
