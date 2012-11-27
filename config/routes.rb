@@ -1,5 +1,8 @@
 TestRails2::Application.routes.draw do
 
+  get "simple_session/new"
+  get "simple_session/destroy"
+
   resources :comments
 
   resources :posts

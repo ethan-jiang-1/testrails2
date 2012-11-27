@@ -51,7 +51,11 @@
 				  </ul>
 			    </li>
 			    <li class="active"> <%= link_to "Home", home_index_path %> </li>
-			    <li > <%= link_to "Login" %> </li>
+			    <% if simple_get_username.empty? %>
+			      <li > <%= link_to "Login", simple_session_new_path %> </li>
+			    <% else %>
+			      <li > <%= link_to "Logoff: #{simple_get_username}", simple_session_destroy_path %> </li>
+			    <% end %>
 			  </ul>
 			</div>
 		</div>
