@@ -17,10 +17,10 @@ module ApplicationHelper
     cookies[:tr2_goods] = nil
   end
 
-  def simple_get_usernamese
-    user_name = "bbb"
-    if defined? session && defined? session[:user_name]
-       user_name = session[:user_name].to_s
+  def simple_get_username
+    user_name = ""
+    if defined? session && defined? session[:tr2_user_name]
+       user_name = session[:tr2_user_name].to_s
     end
     user_name
   end

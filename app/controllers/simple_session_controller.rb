@@ -2,7 +2,7 @@ include ApplicationHelper
 
 class SimpleSessionController < ApplicationController
   def new
-    simple_sign_in "abc"
+    simple_sign_in "guest"
     redirect_to root_path
   end
 
