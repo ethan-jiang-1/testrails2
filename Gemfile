@@ -57,3 +57,6 @@ gem "bootstrap-datepicker-rails"
 #plugins
 gem "rails_admin"
 gem "devise"
+
+#plugins for extra
+gem "memcache-client"
