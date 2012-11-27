@@ -57,3 +57,8 @@ gem "bootstrap-datepicker-rails"
 #plugins
 gem "rails_admin"
 gem "devise"
+
+
+#plugins for extra
+gem "redis-rails"
+gem "redis-store"

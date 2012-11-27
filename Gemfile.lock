@@ -149,6 +149,23 @@ GEM
     rake (10.0.0)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.2)
+    redis-actionpack (3.2.3)
+      actionpack (~> 3.2.3)
+      redis-rack (~> 1.4.0)
+      redis-store (~> 1.1.0)
+    redis-activesupport (3.2.3)
+      activesupport (~> 3.2.3)
+      redis-store (~> 1.1.0)
+    redis-rack (1.4.2)
+      rack (~> 1.4.1)
+      redis-store (~> 1.1.0)
+    redis-rails (3.2.3)
+      redis-actionpack (~> 3.2.3)
+      redis-activesupport (~> 3.2.3)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.3)
+      redis (>= 2.2.0)
     remotipart (1.0.2)
     require_relative (1.0.3)
     rspec-core (2.12.0)
@@ -222,6 +239,8 @@ DEPENDENCIES
   mysql2
   rails (= 3.2.8)
   rails_admin
+  redis-rails
+  redis-store
   require_relative
   rspec-rails
   ruby-prof
