@@ -1,0 +1,11 @@
+ruby runtime key points:
+1) same configuration as master - db
+2) compile the asset
+3) specific --runtime ruby19 when push the application
+
+
+java runtime key points:
+1) change the configuration - db to mysqladapter - database.xml and gemfile/gemfile.lock
+2) compile the asset
+3) copy .war to deploy folder (sub folder under application root)
+4) push .war from the deploy folder
