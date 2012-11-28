@@ -1,6 +1,6 @@
 class MobileController < ApplicationController
  layout "application.mobile"
- respond_to :html, :mobile
+ respond_to :html, :mobile, :tablet
 
   def index
   end
