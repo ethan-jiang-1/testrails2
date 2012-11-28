@@ -137,7 +137,7 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "orders", :force => true do |t|
     t.string   "track_no"
-    t.string   "details"
+    t.text     "details"
     t.integer  "customer_id"
     t.date     "order_date"
     t.datetime "created_at",  :null => false

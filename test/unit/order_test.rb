@@ -4,7 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  track_no    :string(255)
-#  details     :string(255)
+#  details     :text
 #  customer_id :integer
 #  order_date  :date
 #  created_at  :datetime         not null

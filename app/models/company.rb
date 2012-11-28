@@ -12,5 +12,7 @@
 class Company < ActiveRecord::Base
   attr_accessible :name, :location_id
   has_many :customers
-  has_one :location
+  belongs_to :location
+
+  validates_uniqueness_of :name
 end

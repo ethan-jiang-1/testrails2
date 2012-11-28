@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
       t.string :track_no
-      t.string :details
+      t.text :details
       t.references :customer
       t.date :order_date
 

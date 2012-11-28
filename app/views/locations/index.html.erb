@@ -9,12 +9,14 @@
 
 <table class="table">
   <tr>
+    <th>Name</th>
     <th>Address</th>
     <th>Latitude</th>
     <th>Longitude</th>
   </tr>
   <% for location in @locations %>
     <tr>
+      <td><%= location.name %></td>
       <td><%= location.address %></td>
       <td><%= location.latitude %></td>
       <td><%= location.longitude %></td>
