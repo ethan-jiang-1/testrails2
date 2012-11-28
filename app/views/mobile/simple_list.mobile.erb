@@ -1,0 +1,29 @@
+<div data-role="header">
+  <h1>Listing posts</h1>
+  <%= link_to 'Add',  "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Home',  "data-icon" => "plus", "class" => "ui-btn-right" %>
+  <%= link_to 'Delete', :method => :delete, "data-icon" => "delete", "class" => "ui-btn-right" %>
+</div>
+
+
+
+<div data-role="content">
+  <ul data-role="listview">
+    <li>
+      <%= link_to "link A" %>
+      <%= link_to 'edit post A', "data-icon" => "gear" %>
+    </li>
+    <li>
+      <%= link_to "link B" %>
+      <%= link_to 'edit post B', "data-icon" => "gear" %>
+    </li>
+    <li>
+      <%= link_to "link C" %>
+      <%= link_to 'edit post C', "data-icon" => "gear" %>
+    </li>
+    <li>
+      <%= link_to "link D" %>
+      <%= link_to 'edit post D', "data-icon" => "gear" %>
+    </li>
+  </ul>
+</div>

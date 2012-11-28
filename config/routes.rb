@@ -1,5 +1,10 @@
 TestRails2::Application.routes.draw do
 
+  get "mobile/index"
+  get "mobile/basic"
+  get "mobile/simple_list"
+  get "mobile/simple_form"
+
   resources :comments
 
   resources :posts
