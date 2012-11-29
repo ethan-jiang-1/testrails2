@@ -1,18 +1,55 @@
-<h2>Sign up</h2>
+<h4>Sign up</h4>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  def devise_error_messages_ex!
+    return "" if resource.errors.empty?
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+    sentence = I18n.t("errors.messages.not_saved",
+                      :count => resource.errors.count,
+                      :resource => resource.class.model_name.human.downcase)
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+    html = <<-HTML
+    <div id="error_explanation">
+      <h5>#{sentence}</h5>
+      <ul>#{messages}</ul>
+    </div>
+    HTML
 
-  <div><%= f.submit "Sign up" %></div>
+    html.html_safe
+  end
+
+%>
+
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+  <% if !devise_error_messages_ex!.empty? %>
+    <div class= "alert alert-error">
+    <%= devise_error_messages_ex! %>
+    </div>
+  <% end %>
+
+	<div class="control-group">
+	<%= f.label :email, :class=>"control-label" %>
+	<div class="controls"> <%= f.email_field :email %> </div>
+	</div>
+
+	<div class="control-group">
+	<%= f.label :password,:class=>"control-label" %>
+	<div class="controls"> <%= f.password_field :password %> </div>
+	</div>
+
+	<div class="control-group">
+	<%= f.label :password_confirmation,:class=>"control-label" %>
+	<div class="controls"> <%= f.password_field :password_confirmation %> </div>
+	</div>
+
+
+    <div class="control-group">
+	<div class="controls"> <%= f.submit "Sign up",:class=>"btn btn-inverse" %></div>
+	</div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

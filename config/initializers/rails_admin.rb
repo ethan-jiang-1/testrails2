@@ -37,7 +37,7 @@ RailsAdmin.config do |config|
   # config.label_methods << :description # Default is [:name, :title]
 
   #disable authentication - Yizhen
-  config.authenticate_with {}
+  #config.authenticate_with {}
 
 
   ################  Model configuration  ################

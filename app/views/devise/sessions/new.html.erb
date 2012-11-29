@@ -1,26 +1,30 @@
-<h2>Sign in </h2>
+<h4>Sign in </h4>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-horizontal") do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f| %>
+    <%= content_tag(:div, flash[:error], :id => "flash_error", :class=> "alert alert-error") if flash[:error] %>
+    <%= content_tag(:div, flash[:notice], :id => "flash_notice", :class=> "alert alert-success") if flash[:notice] %>
+    <%= content_tag(:div, flash[:alert], :id => "flash_alert", :class=> "alert alert-block") if flash[:alert] %>
+
 	<div class="control-group">
 	<%= f.label :email, :class=>"control-label" %>
-	<div class="controls"><%= f.email_field :email, :class=>"controls" %></div>
+	<div class="controls"> <%= f.email_field :email %> </div>
 	</div>
 
 	<div class="control-group">
 	<%= f.label :password,:class=>"control-label" %>
-	<div class="controls"><%= f.password_field :password %></div>
-  	</div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="control-group">
-	<%= f.check_box :remember_me %>
-	<%= f.label :remember_me %>
+	<div class="controls"> <%= f.password_field :password %> </div>
 	</div>
-  <% end -%>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="control-group">
+	<div class="controls">
+	<label for="user_admin_remember_me"> <%= f.check_box :remember_me %> Remember me </label>
+	</div>
+	</div>
+  <% end %>
 
   	<div class="control-group">
-	<%= f.submit "Sign in", :class=>"btn btn-primary" %>
+	<div class="controls"> <%= f.submit "Sign in", :class=>"btn btn-inverse" %> </div>
 	</div>
 <% end %>
-
 <%= render "devise/shared/links" %>
