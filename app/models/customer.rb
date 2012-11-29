@@ -16,9 +16,11 @@
 #
 
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :phone, :company_id, :role_ids
+  attr_accessible :name, :phone, :phone_mobile, :mailing_address, :email_address, :social_info
+  attr_accessible :company_id, :role_ids, :picture_id
 
   belongs_to :company
+  belongs_to :picture
   has_and_belongs_to_many :roles
 
   has_many :orders, :inverse_of => :customer
