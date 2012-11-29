@@ -83,11 +83,17 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   create_table "employees", :force => true do |t|
     t.string   "name"
     t.integer  "manager_id"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "company_id"
+    t.integer  "picture_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "employees", ["company_id"], :name => "index_employees_on_company_id"
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
+  add_index "employees", ["picture_id"], :name => "index_employees_on_picture_id"
 
   create_table "gmap_users", :force => true do |t|
     t.string   "name"

@@ -6,6 +6,7 @@ TestRails2::Application.routes.draw do
   resources :orders
   resources :customers
   resources :pictures
+  resources :employees
 
   resources :products
 
