@@ -1,14 +1,17 @@
 TestRails2::Application.routes.draw do
 
-  resources :comments
+  resources :roles
+  resources :companies
+  resources :locations
+  resources :orders
+  resources :customers
+  resources :pictures
 
+  resources :products
+
+  resources :comments
   resources :posts
 
-  resources :roles
-
-  resources :companies
-
-  resources :locations
   resources :gmap_users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -32,12 +35,6 @@ TestRails2::Application.routes.draw do
   get "test/jquery_ui_basic"
   get "test/ujs_basic"
 
-
-  resources :orders
-
-  resources :customers
-
-  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -49,27 +49,28 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.integer  "location_id"
+    t.integer  "logo_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "customer_role_relations", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "role_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "customer_role_relations", ["customer_id"], :name => "index_customer_role_relations_on_customer_id"
-  add_index "customer_role_relations", ["role_id"], :name => "index_customer_role_relations_on_role_id"
+  add_index "companies", ["logo_id"], :name => "index_companies_on_logo_id"
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "phone_mobile"
+    t.string   "mailing_address"
+    t.string   "email_address"
+    t.string   "social_info"
     t.integer  "company_id"
+    t.integer  "picture_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "customers", ["company_id"], :name => "index_customers_on_company_id"
+  add_index "customers", ["picture_id"], :name => "index_customers_on_picture_id"
 
   create_table "customers_roles", :id => false, :force => true do |t|
     t.integer "customer_id"
@@ -109,12 +110,12 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   add_index "location_relations", ["loc_to_id"], :name => "index_location_relations_on_loc_to_id"
 
   create_table "locations", :force => true do |t|
+    t.string   "name"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "name"
   end
 
   create_table "models", :force => true do |t|
@@ -168,6 +169,8 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
     t.string   "name"
     t.integer  "imageable_id"
     t.string   "imageable_type"
+    t.string   "external_url"
+    t.string   "asset_path"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -182,10 +185,10 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "category"
     t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
