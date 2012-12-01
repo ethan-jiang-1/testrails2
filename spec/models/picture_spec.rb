@@ -3,11 +3,12 @@
 # Table name: pictures
 #
 #  id             :integer          not null, primary key
-#  name           :string(255)
 #  imageable_id   :integer
 #  imageable_type :string(255)
-#  external_url   :string(255)
-#  asset_path     :string(255)
+#  uuid           :string(36)
+#  image_type     :string(16)
+#  store_type     :string(10)
+#  store_uri      :string(255)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

@@ -3,7 +3,7 @@
 # Table name: orders
 #
 #  id          :integer          not null, primary key
-#  track_no    :string(255)
+#  track_no    :string(36)
 #  details     :text
 #  customer_id :integer
 #  order_date  :date

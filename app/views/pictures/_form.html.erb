@@ -2,11 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-      <%= f.input :name %>
+      <!-- %= f.input :uuid, :readonly => true, :class => 'input-xxlarge' % -->
+      <div class="control-group float optional">
+        <%= f.label :uuid %>
+         <div class="controls">
+          <%= f.input_field :uuid, :readonly => true, :class => 'input-xxlarge' %>
+          </div>
+      </div>
       <%= f.input :imageable_id %>
       <%= f.input :imageable_type %>
-      <%= f.input :external_url %>
-      <%= f.input :asset_path %>
+      <%= f.input :image_type %>
+      <%= f.input :store_type %>
+      <%= f.input :store_uri %>
   </div>
 
   <div class="form-actions">

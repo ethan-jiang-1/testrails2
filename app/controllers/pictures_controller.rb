@@ -25,6 +25,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new.json
   def new
     @picture = Picture.new
+    @picture.uuid = UUIDTools::UUID.random_create.to_s
 
     respond_to do |format|
       format.html # new.html.erb
