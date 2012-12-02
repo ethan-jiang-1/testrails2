@@ -1,5 +1,7 @@
 TestRails2::Application.routes.draw do
 
+  get "pictures/blob_picture"
+
   resources :roles
   resources :companies
   resources :locations
@@ -14,6 +16,7 @@ TestRails2::Application.routes.draw do
   resources :posts
 
   resources :gmap_users
+
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

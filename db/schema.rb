@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201044452) do
+ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -39,15 +39,6 @@ ActiveRecord::Schema.define(:version => 20121201044452) do
 
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
-
-  create_table "blob_pictures", :force => true do |t|
-    t.string   "uuid",       :limit => 32
-    t.binary   "data",       :limit => 16777215
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
-  add_index "blob_pictures", ["uuid"], :name => "index_blob_pictures_on_uuid"
 
   create_table "comments", :force => true do |t|
     t.string   "content"
@@ -184,11 +175,12 @@ ActiveRecord::Schema.define(:version => 20121201044452) do
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.string   "uuid",           :limit => 36
-    t.string   "image_type",     :limit => 16
-    t.string   "store_type",     :limit => 10
+    t.string   "content_type",   :limit => 16
+    t.string   "store_loc",      :limit => 10
     t.string   "store_uri"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.binary   "local_data",     :limit => 16777215
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   add_index "pictures", ["uuid"], :name => "index_pictures_on_uuid"

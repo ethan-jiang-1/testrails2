@@ -43,6 +43,14 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(params[:picture])
 
+    if !params[:picture][:local_data].blank?
+      @picture.content_type = params[:picture][:local_data].content_type
+      @picture.store_loc = "blob"
+      @picture.store_uri = params[:picture][:local_data].original_filename
+      @picture.local_data = params[:picture][:local_data].read
+      @picture.save
+    end
+
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
@@ -58,6 +66,20 @@ class PicturesController < ApplicationController
   # PUT /pictures/1.json
   def update
     @picture = Picture.find(params[:id])
+
+    #TODO:  Yizhen It is kind of ugly here, need to play more around how to deal with attachment/blob update/create.. later
+
+    if !params[:picture][:local_data].blank?
+      @picture.content_type = params[:picture][:local_data].content_type
+      @picture.store_uri = params[:picture][:local_data].original_filename
+      @picture.local_data = params[:picture][:local_data].read
+      @picture.update_attributes(:content_type =>params[:picture][:local_data].content_type)
+
+      respond_to do |format|
+        format.html { redirect_to @picture, notice: 'Picture was successfully updated.' }
+      end
+      return
+    end
 
     respond_to do |format|
       if @picture.update_attributes(params[:picture])
@@ -80,5 +102,10 @@ class PicturesController < ApplicationController
       format.html { redirect_to pictures_url }
       format.json { head :no_content }
     end
+  end
+
+  def blob_picture
+    @picture = Picture.find(params[:id])
+    send_data @picture.local_data, :type => @picture.content_type, :disposition => 'inline'
   end
 end
