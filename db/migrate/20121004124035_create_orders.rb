@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :track_no, :limit => 36
       t.text :details
       t.references :customer
+      t.references :employee
       t.date :order_date
 
       t.timestamps

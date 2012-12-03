@@ -1,6 +1,6 @@
 
 <tr><td>
-<p> <b><%= product.name %> </b> <b>$</b><%= product.price %> </p>
+<p> <b><%= product.name %> </b> <b>$</b><%= product.price %> <b>picture(s)</b><%=  product.picture_ids %></b></p>
 <p> <%= link_to 'Edit', edit_product_path(product) %>  |
     <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

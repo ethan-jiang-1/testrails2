@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120061041) do
+ActiveRecord::Schema.define(:version => 20121203165138) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -86,14 +86,12 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
     t.string   "email"
     t.string   "phone"
     t.integer  "company_id"
-    t.integer  "picture_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "employees", ["company_id"], :name => "index_employees_on_company_id"
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
-  add_index "employees", ["picture_id"], :name => "index_employees_on_picture_id"
 
   create_table "gmap_users", :force => true do |t|
     t.string   "name"
@@ -146,12 +144,23 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
     t.string   "track_no",    :limit => 36
     t.text     "details"
     t.integer  "customer_id"
+    t.integer  "employee_id"
     t.date     "order_date"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
   end
 
   add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
+
+  create_table "orders_products", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "orders_products", ["order_id"], :name => "index_orders_products_on_order_id"
+  add_index "orders_products", ["product_id"], :name => "index_orders_products_on_product_id"
 
   create_table "parts", :force => true do |t|
     t.string   "part_name"

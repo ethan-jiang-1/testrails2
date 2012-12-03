@@ -25,8 +25,9 @@
   <%= f.error :product, :id => 'product_error' %>
   <%= f.full_error :token %>
   -->
-
+  <%= f.association :employee %>
   <%= f.association :customer, :collection => Company.all(:order => 'name'), :prompt => "Choose a Company" %>
+  <%= f.association :products %>
 
   <!-- %= f.input :order_date %-->
   <div class="control-group">

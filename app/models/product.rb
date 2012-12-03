@@ -11,8 +11,13 @@
 #
 
 class Product < ActiveRecord::Base
-  has_many:pictures, :as => :imageable
   attr_accessible :name, :category, :price
+  attr_accessible :picture_ids
+  attr_accessible :order_ids
+
+  has_many :pictures, :as => :imageable
+
+  has_and_belongs_to_many :orders
 
 
   def self.search(query)

@@ -6,6 +6,8 @@
     <th>Track_no</th>
     <th>Details</th>
     <th>Customer</th>
+    <th>Employee</th>
+    <th>Product(s)</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +19,8 @@
     <td><%= order.track_no %></td>
     <td><%= order.details %></td>
     <td><%= order.customer_id %></td>
+    <td><%= order.employee_id %></td>
+    <td><%= order.product_ids %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>
     <td><%= link_to 'Destroy', order, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>

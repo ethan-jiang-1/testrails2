@@ -6,6 +6,7 @@
 #  track_no    :string(36)
 #  details     :text
 #  customer_id :integer
+#  employee_id :integer
 #  order_date  :date
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

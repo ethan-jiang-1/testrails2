@@ -22,5 +22,11 @@
 class Picture < ActiveRecord::Base
   attr_accessible :uuid, :content_type, :store_loc, :store_uri, :local_data
   attr_accessible :imageable_id, :imageable_type
+
   belongs_to :imagable, :polymorphic => true
+
+  #make 3 belong_to - to help to show the right diagram in RubyMine IDE model diagram
+  belongs_to :employee
+  belongs_to :product
+  belongs_to :customer
 end

@@ -7,7 +7,7 @@
     <th>phone</th>
     <th>manager id </th>
     <th>company id </th>
-    <th>picture id </th>
+    <th>picture id(s) </th>
   </tr>
 
 <% @employees.each do |employee| %>
@@ -17,7 +17,7 @@
     <td><%= employee.phone %> </td>
     <td><%= employee.manager_id %> </td>
     <td><%= employee.company_id %> </td>
-    <td><%= employee.picture_id %> </td>
+    <td><%= employee.picture_ids %> </td>
     <td><%= link_to 'Show', employee %> <%= link_to 'Edit', edit_employee_path(employee) %> <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

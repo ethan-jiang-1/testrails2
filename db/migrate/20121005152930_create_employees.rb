@@ -6,13 +6,11 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.references :company
-      t.references :picture
 
       t.timestamps
     end
 
     add_index :employees, :manager_id
     add_index :employees, :company_id
-    add_index :employees, :picture_id
   end
 end
