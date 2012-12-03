@@ -13,8 +13,20 @@
       <%= f.input :imageable_type %>
       <%= f.input :content_type %>
       <%= f.input :store_loc %>
-      <%= f.input :store_uri %>
-      <p><%= image_tag url_for(:action => 'blob_picture', :id => @picture.id)  %> <%= f.file_field  :local_data, :value => "Select a file"%></p>
+
+      <div class="control-group float optional">
+        <%= f.label :store_uri %>
+        <div class="controls">
+          <%= f.input_field :store_uri,  :class => 'input-xxlarge' %>
+        </div>
+      </div>
+
+      <div class="control-group float optional">
+        <%= f.label :local_data %>
+        <div class="controls">
+            <%= image_tag(url_for(:action => 'blob_picture', :id => @picture.id)) unless (@piture.blank? && @picture.local_data.blank?)  %> <%= f.file_field  :local_data, :value => "Select a file", :class => "btn" %>
+         </div>
+       </div>
   </div>
 
   <div class="form-actions">
