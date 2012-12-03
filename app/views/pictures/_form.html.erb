@@ -9,10 +9,10 @@
           <%= f.input_field :uuid, :readonly => true, :class => 'input-xxlarge' %>
           </div>
       </div>
-      <%= f.input :imageable_id %>
-      <%= f.input :imageable_type %>
-      <%= f.input :content_type %>
-      <%= f.input :store_loc %>
+      <%= f.input :imageable_id, :disabled => true %>
+      <%= f.input :imageable_type, :disabled => true  %>
+      <%= f.input :content_type, :disabled => true  %>
+      <%= f.input :store_loc, :disabled => true  %>
 
       <div class="control-group float optional">
         <%= f.label :store_uri %>

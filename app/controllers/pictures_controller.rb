@@ -26,6 +26,7 @@ class PicturesController < ApplicationController
   def new
     @picture = Picture.new
     @picture.uuid = UUIDTools::UUID.random_create.to_s
+    @picture.store_loc = "blob"
 
     respond_to do |format|
       format.html # new.html.erb
