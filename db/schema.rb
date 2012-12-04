@@ -49,12 +49,12 @@ ActiveRecord::Schema.define(:version => 20121203165138) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.integer  "location_id"
-    t.integer  "logo_id"
+    t.integer  "picture_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "companies", ["logo_id"], :name => "index_companies_on_logo_id"
+  add_index "companies", ["picture_id"], :name => "index_companies_on_picture_id"
 
   create_table "customers", :force => true do |t|
     t.string   "name"

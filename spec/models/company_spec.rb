@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  name        :string(255)
 #  location_id :integer
-#  logo_id     :integer
+#  picture_id  :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

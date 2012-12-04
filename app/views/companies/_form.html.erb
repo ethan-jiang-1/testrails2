@@ -7,6 +7,7 @@
       <label class="string optional control-label" for="location_id"> Location </label>
       <div class="controls"><%= f.collection_select :location_id, Location.all, :id, :address %></div>
     </div>
+    <%= f.association :picture %>
 </div>
 <div>
     <%= f.button :submit, :class => 'btn btn-inverse' %>

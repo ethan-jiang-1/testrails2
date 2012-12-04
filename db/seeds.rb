@@ -7,7 +7,7 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 
-#Roles
+#--Roles
 print "[testrails2:db:seed]: roles\n"
 r1 = Role.create(:name => "role 1")
 r2 = Role.create(:name => "role 2")
@@ -19,7 +19,7 @@ r7 = Role.create(:name => "role 7")
 r8 = Role.create(:name => "role 8")
 r9 = Role.create(:name => "role 9")
 
-#Locattions
+#--Locattions
 print "[testrails2:db:seed]: locations\n"
 l1 = Location.create( :name => "Loc b1",  :address => "tiananmen, beijing" )
 l2 = Location.create( :name => "Loc b2",  :address => "tiantan, beijing" )
@@ -31,23 +31,60 @@ l7 = Location.create( :name => "Loc s2",  :address => "pudong, shanghai" )
 l8 = Location.create( :name => "Loc s3",  :address => "yuyang, shanghai" )
 l9 = Location.create( :name => "Loc s4",  :address => "huangpu, shanghai" )
 
-#Companies
+#--Pictures
+def sd_create_pic name
+  relpath = "public/images/seed/" + name.to_s
+  data = IO.read Rails.root.join(relpath)
+  Picture.create(:content_type => "image/jpg",:store_loc=> "blob",:store_uri => name, :local_data => data)
+end
+
+print "[testrails2:db:seed]: pictures\n"
+pc1 = sd_create_pic "company-1.jpg"
+pc2 = sd_create_pic "company-2.jpg"
+pc3 = sd_create_pic "company-3.jpg"
+pc4 = sd_create_pic "company-4.jpg"
+pd11 = sd_create_pic "product-1-1.jpg"
+pd12 = sd_create_pic "product-1-2.jpg"
+pd13 = sd_create_pic "product-1-3.jpg"
+pd21 = sd_create_pic "product-2-1.jpg"
+pd22 = sd_create_pic "product-2-2.jpg"
+pd23 = sd_create_pic "product-2-2.jpg"
+pe1 = sd_create_pic "employee-1.jpg"
+pe2 = sd_create_pic "employee-2.jpg"
+pe3 = sd_create_pic "employee-3.jpg"
+pe4 = sd_create_pic "employee-4.jpg"
+pe5 = sd_create_pic "employee-5.jpg"
+pe6 = sd_create_pic "employee-6.jpg"
+
+#-Companies
+def sd_create_company name, lx, px
+  c = Company.create( :name => name )
+  c.location = lx
+  c.picture = px
+  c.save
+  c
+end
+
 print "[testrails2:db:seed]: companies\n"
-c1 = Company.create( :name => "Corp 1" )
-c1.location = l4
-c1.save
+c1 = sd_create_company "HP",    l4, pc1
+c2 = sd_create_company "DELL",  l3, pc2
+c3 = sd_create_company "IBM",   l2, pc3
+c4 = sd_create_company "LENOVO",l1, pc4
 
-c2 = Company.create( :name => "Corp 2" )
-c2.location = l3
-c2.save
 
-c3 = Company.create( :name => "Corp 3" )
-c3.location = l2
-c3.save
+#-Products
+t1 = Product.create :name => "phone 1", :category => "phone",  :price => 100
+t1.pictures << pd11
+t1.pictures << pd12
+t1.pictures << pd13
+t1.save
 
-c4 = Company.create( :name => "Corp 4" )
-c4.location = l1
-c4.save
+t2 = Product.create :name => "phone 2", :category => "phone",  :price => 150
+t2.pictures << pd21
+t2.pictures << pd22
+t2.pictures << pd23
+t2.save
+
 
 #Customers
 print "[testrails2:db:seed]: customers\n"
@@ -69,6 +106,11 @@ x3.company = c3
 x3.roles << r1
 x3.roles << r4
 x3.save
+
+
+
+#Employees
+
 
 #Orders
 print "[testrails2:db:seed]: orders\n"

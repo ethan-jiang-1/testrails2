@@ -8,8 +8,14 @@
 
 <p>
   <b>Location:</b>
-  <%= @company.location_id %>
+  <%= @company.location_id %> - <%= Location.find_by_id(@company.location_id).address %>
 </p>
+
+<p>
+  <b>Picture:</b>
+  <%= @company.picture_id %> - <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => @company.picture_id ) %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_company_path(@company) %> |

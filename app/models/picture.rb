@@ -28,5 +28,7 @@ class Picture < ActiveRecord::Base
   #make 3 belong_to - to help to show the right diagram in RubyMine IDE model diagram
   belongs_to :employee
   belongs_to :product
-  belongs_to :customer
+
+  has_many :customer
+  has_many :company
 end
