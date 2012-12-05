@@ -30,6 +30,7 @@ production:
 
 
 # possible adapters
-#  mysql      - MRI, jruby
+#  mysql      - MRI
+#  jdbcmysql  - jruby
 #  mysql2     - MRI
 #  postgresql - MRI
