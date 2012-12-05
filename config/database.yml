@@ -1,27 +1,27 @@
 development:
-  adapter: mysql2
+  adapter: jdbcmysql
   encoding: utf8
   database: TestRails2_development
   host: localhost
   username: rails
   password: ""
-  socket: /var/run/mysqld/mysqld.sock
-  reconnect: false
-  pool: 5
+  #socket: /var/run/mysqld/mysqld.sock
+  #reconnect: false
+  #pool: 5
 
 test:
-  adapter: mysql2
+  adapter: jdbcmysql
   encoding: utf8
   database: TestRails2_test
   host: localhost
   username: rails
   password: ""
-  socket: /var/run/mysqld/mysqld.sock
-  reconnect: false
-  pool: 5
+  #socket: /var/run/mysqld/mysqld.sock
+  #reconnect: false
+  #pool: 5
 
 production:
-  adapter: mysql2
+  adapter: jdbcmysql
   encoding: utf8
   database: TestRails2_production
   host: localhost
@@ -30,6 +30,10 @@ production:
 
 
 # possible adapters
-#  mysql      - MRI, jruby
+#  mysql      - MRI
+#  jdbcmysql  - jruby
 #  mysql2     - MRI
 #  postgresql - MRI
+
+
+#activerecord-jdbcmysql-adapter
