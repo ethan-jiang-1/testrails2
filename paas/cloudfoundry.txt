@@ -5,7 +5,13 @@ ruby runtime key points:
 
 
 java runtime key points:
-1) change the configuration - db to mysqladapter - database.xml and gemfile/gemfile.lock
+1) change the configuration -
+  11) database.xml to jdbcmysql  as adapter
+  12) gemfile use activerecord-jdbcmysql-adapter
+  13) bundle all
 2) compile the asset
 3) copy .war to deploy folder (sub folder under application root)
-4) push .war from the deploy folder
+4) push application from folder
+  vmc push --path=deploy
+5) notice:  no luck with new jruby 1.7.x yet
+    jruby 1.7.0 and jruby 1.7.1 gave different types of error
