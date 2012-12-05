@@ -1,0 +1,17 @@
+ruby runtime key points:
+1) create rhc project in different folder (not working folder)
+   will leave origin remote to rhc
+2) create github remote
+   this is where to get updated code
+3) precompile the asset and try to use passenger as webserver to see the result
+4) clean up the precompiled asset
+   41) rhc will compile the asset when application has been pushed
+5) check in all updated file in master
+6) git push - to push the master to origin (i.e. rhc)
+
+useful commands:
+ rhc domain show to list the application
+ rhc tail app_name to see the log
+
+info:
+rhc is using Apache/2.2.17 (Unix) Phusion_Passenger/3.0.12   
