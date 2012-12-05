@@ -1,7 +1,15 @@
 ruby runtime key points:
 1) clone the repository to different local folder - require a local master with new configuration - no need to push to origin
 2) change the db to postgres
-   11) change the database.xml and gemfile/gemfile.lock
+   11) change the database.xml use 'postgresql'
+   12) gemfile  use 'pg'
 3) git push from application root, no need to precompile asset
+   31) ensure the precompile works - especially the dependences of gem to make less...etc works
 4) git push master
+   32) git push heroku master - heroku is a remote git repository
+5) database migration
+   once the application is up-and-running,  ensure db has setup (also seed)
+   heroku run rake db:migrate
+   heroku run rake db:seed
+   notice:  run command may have trouble behind the proxy
 5) great info from logs - check right after deployment to see if there is anything wrong.
