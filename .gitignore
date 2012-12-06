@@ -18,3 +18,4 @@
 # Ignore some Rubymine setting files
 /.idea/*
 !/.idea/*.iml
+.elasticbeanstalk/
