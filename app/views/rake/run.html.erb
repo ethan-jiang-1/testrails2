@@ -1,0 +1,27 @@
+<h4> Rake run </h4>
+
+<% if params[:task].nil? %>
+  <p> Please specific <b>rake_task_name</b> in url: .../run?<b>task=rake_task_name</b> &nbsp;&nbsp;&nbsp;&nbsp; -- without quotation around rake_task_name <p>
+  <p> example: .../run?task=db:seed </p>
+<pre>
+Params:
+  <%= params %>
+</pre>
+
+<% else %>
+  <p> Your command was: <b> rake <%= params[:task] %> </b> <p1>
+  <% if !@rake_exception.nil %>
+    <p> failed to run rake  <%= params[:task] %> </p>
+    <pre>
+       <%= @rake_exception.message %>
+    </pre>
+  <% end %>
+<pre>
+Params:
+  <%= params %>
+Params[:task]:
+  <%= params[:task] %>
+Rake::task object:
+  <%= p @rake_task.inspect %>
+</pre>
+<% end %>

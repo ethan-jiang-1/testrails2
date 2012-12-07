@@ -39,6 +39,8 @@ TestRails2::Application.routes.draw do
   get "test/jquery_ui_basic"
   get "test/ujs_basic"
 
+  get "rake/run"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
