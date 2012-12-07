@@ -1,9 +1,11 @@
 require 'rake'
+require 'stringio'
 
 Rake::Task.clear # necessary to avoid tasks being loaded several times in dev mode
 TestRails2::Application.load_tasks #
 
 class RakeController < ApplicationController
+  #layout "application_light"
 
   rescue_from Exception, :with => :handle_exceptions
 
@@ -12,7 +14,7 @@ class RakeController < ApplicationController
     @rake_task_name = nil
     if !params[:task].nil?
       @rake_task_name = params[:task].to_s
-      @rake_task = execute_rake_task @rake_task_name
+      @rake_task = execute_rake_task_ex @rake_task_name
     end
   end
 
@@ -20,8 +22,9 @@ private
   def handle_exceptions(e)
     #p e
 
-    msg = "<h3> Error on run Rake command <h3>"
-    msg += "<h4> <pre>" + e.message.to_s + "</pre> </h4>"
+    msg = "<h3> Rake Run </h3>"
+    msg += "<p> Error on run Rake command: <b> rake " + params[:task] + "</b></p>"
+    msg += "<pre>" + e.message.to_s + "</pre>"
     render :inline => msg, :layout => 'application'
   end
 
@@ -36,6 +39,36 @@ private
       t.invoke()
     end
     t
+  end
+
+  def execute_rake_task_ex task_name
+    t = Rake.application[task_name]
+
+    t.reenable
+    @rake_stdout_lines, @rake_stderr_lines = capture_stdout { t.invoke }
+
+    #@rake_stdout_lines.rewind
+    #p @rake_stdout_lines
+    #p @rake_stdout_lines.readlines
+
+    t
+  end
+
+end
+
+module Kernel
+
+  def capture_stdout
+    out = StringIO.new
+    err = StringIO.new
+    $stdout = out
+    $stderr = err
+    yield
+    #print  "***look here***"
+    return out,err
+  ensure
+    $stdout = STDOUT
+    $stderr = STDERR
   end
 
 end

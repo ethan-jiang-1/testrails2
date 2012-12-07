@@ -1,4 +1,4 @@
-<h4> Rake run </h4>
+<h3> Rake run </h3>
 
 <% if params[:task].nil? %>
   <p> Please specific <b>rake_task_name</b> in url: .../run?<b>task=rake_task_name</b> &nbsp;&nbsp;&nbsp;&nbsp; -- without quotation around rake_task_name <p>
@@ -10,12 +10,22 @@ Params:
 
 <% else %>
   <p> Your command was: <b> rake <%= params[:task] %> </b> <p1>
-  <% if !@rake_exception.nil %>
-    <p> failed to run rake  <%= params[:task] %> </p>
-    <pre>
-       <%= @rake_exception.message %>
-    </pre>
-  <% end %>
+<hr/>
+<h5> Captured stdout </h5>
+<pre>
+<% @rake_stdout_lines.rewind %>
+<% @rake_stdout_lines.each do |line| %>
+<%= line %>
+<% end %>
+</pre>
+<pre>
+<% @rake_stderr_lines.rewind %>
+<% @rake_stderr_lines.each do |line| %>
+<%= line %>
+<% end %>
+</pre>
+<!--
+<h4> Parameters details </h4>
 <pre>
 Params:
   <%= params %>
@@ -24,4 +34,5 @@ Params[:task]:
 Rake::task object:
   <%= p @rake_task.inspect %>
 </pre>
+-->
 <% end %>
