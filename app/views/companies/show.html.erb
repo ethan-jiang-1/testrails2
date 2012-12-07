@@ -8,7 +8,7 @@
 
 <p>
   <b>Location:</b>
-  <%= @company.location_id %> - <%= Location.find_by_id(@company.location_id).address %>
+  <%= @company.location_id %> - <%= Location.find_by_id(@company.location_id).address  if !Location.find_by_id(@company.location_id).nil? %>
 </p>
 
 <p>

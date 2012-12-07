@@ -21,10 +21,14 @@
         <% end %>
     </td>
     <td><%= employee.company_id %>
-        <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => Company.find_by_id(employee.company_id).picture_id), :size=> "60x60" %>
+        <% if !Company.find_by_id(employee.company_id).nil? %>
+            <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => Company.find_by_id(employee.company_id).picture_id), :size=> "60x60" %>
+        <% end %>
     </td>
     <td><%= employee.manager_id %>
-        <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => Employee.find_by_id(employee.manager_id).pictures.first.id), :size=> "60x60" %>
+        <% if !Employee.find_by_id(employee.manager_id).nil? && !Employee.find_by_id(employee.manager_id).pictures.nil? %>
+            <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => Employee.find_by_id(employee.manager_id).pictures.first.id), :size=> "60x60" %>
+        <% end %>
     </td>
     <td><%= link_to 'Show', employee %> <%= link_to 'Edit', edit_employee_path(employee) %> <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
