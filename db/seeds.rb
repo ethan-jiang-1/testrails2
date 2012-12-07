@@ -47,8 +47,18 @@ l4 = sd_create_location "Loc s2",  "pudong, shanghai"
 print "[testrails2:db:seed]: pictures\n"
 def sd_create_pic name
   relpath = "public/images/seed/" + name.to_s
-  data = IO.read Rails.root.join(relpath)
-  pic = Picture.create(:content_type => "image/jpg",:store_loc=> "blob",:store_uri => name, :local_data => data,  :uuid =>  UUIDTools::UUID.timestamp_create.to_s)
+  abspath = Rails.root.join(relpath)
+  data = nil
+  begin
+    data = IO.read abspath
+  rescue
+    print "[testrails2:db:seed] Error: when read data from " + abspath   + "\n"
+  end
+  if data.nil?
+    pic = Picture.create(:content_type => "image/jpg",:store_loc=> "blob",:store_uri => name )
+  else
+    pic = Picture.create(:content_type => "image/jpg",:store_loc=> "blob",:store_uri => name, :local_data => data,  :uuid =>  UUIDTools::UUID.timestamp_create.to_s)
+  end
   if pic.nil?
     pic = Picture.find_by_store_uri name
   end
@@ -65,6 +75,7 @@ pd13 = sd_create_pic "product-1-3.jpg"
 pd21 = sd_create_pic "product-2-1.jpg"
 pd22 = sd_create_pic "product-2-2.jpg"
 pd23 = sd_create_pic "product-2-2.jpg"
+pd31 = sd_create_pic "product-3-1.jpg"
 pe1 = sd_create_pic "employee-1.jpg"
 pe2 = sd_create_pic "employee-2.jpg"
 pe3 = sd_create_pic "employee-3.jpg"
@@ -100,17 +111,22 @@ def sd_create_product name, category, price
   p
 end
 
-t1 = sd_create_product "phone 1", "phone", 100
+t1 = sd_create_product "laptop 1", "laptop", 100
 t1.pictures << pd11
 t1.pictures << pd12
 t1.pictures << pd13
 t1.save
 
-t2 = sd_create_product "phone 2", "phone", 150
+t2 = sd_create_product "phone 1", "phone", 150
 t2.pictures << pd21
 t2.pictures << pd22
 t2.pictures << pd23
 t2.save
+
+t3 = sd_create_product "desktop 1", "desktop", 150
+t3.pictures << pd31
+t3.save
+
 
 
 #Customers
@@ -172,11 +188,26 @@ e3.pictures << pe3
 e3.manager = e1
 e3.save
 
-e4 = sd_create_employee "girl4", "girl4@hp.com", "12345678"
+e4 = sd_create_employee "boy4", "boy4@hp.com", "12345678"
 e4.company = c1
-e4.pictures << pe3
+e4.pictures << pe4
 e4.manager = e1
 e4.save
+
+e5 = sd_create_employee "boy5", "boy5@hp.com", "12345678"
+e5.company = c1
+e5.pictures << pe5
+e5.manager = e1
+e5.save
+
+e6= sd_create_employee "boy6", "boy6@hp.com", "12345678"
+e6.company = c1
+e6.pictures << pe6
+e6.manager = e1
+e6.save
+
+
+
 
 
 #Orders
@@ -191,13 +222,20 @@ def sd_creae_order details, order_date
 end
 
 o1 = sd_creae_order "order 1",  Date.new(2012,10,1)
-o1.customer = x2
+o1.customer = x3
+o1.employee = e1
+o1.products << t1
+
 o1.save
 
 o2 = sd_creae_order "order 2",  Date.new(2012,10,2)
 o2.customer = x2
+o2.employee = e3
+o2.products << t2
 o2.save
 
 o3 = sd_creae_order "order 3",  Date.new(2012,10,3)
-o3.customer = x2
+o3.customer = x1
+o3.employee = e5
+o3.products << t3
 o3.save
