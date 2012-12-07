@@ -29,7 +29,7 @@ Geocoder.configure do |config|
   #config.cache_prefix = "..."
 
 
-  config.timeout      = 30          # geocoding service timeout (secs)
+  config.timeout      = 10          # geocoding service timeout (secs)
   config.units        = :km         # :km for kilometers or :mi for miles
   config.lookup       = :google     # name of geocoding service (symbol)
 
