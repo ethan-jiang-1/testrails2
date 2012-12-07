@@ -47,10 +47,6 @@ private
     t.reenable
     @rake_stdout_lines, @rake_stderr_lines = capture_stdout { t.invoke }
 
-    #@rake_stdout_lines.rewind
-    #p @rake_stdout_lines
-    #p @rake_stdout_lines.readlines
-
     t
   end
 
@@ -64,7 +60,6 @@ module Kernel
     $stdout = out
     $stderr = err
     yield
-    #print  "***look here***"
     return out,err
   ensure
     $stdout = STDOUT
