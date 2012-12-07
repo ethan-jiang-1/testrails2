@@ -25,8 +25,7 @@ TestRails2::Application.routes.draw do
 
   get "home/index"
   get "home/search"
-  get "home/environment"
-  get "home/routes"
+
 
   root :to => "home#index"
 
@@ -39,7 +38,11 @@ TestRails2::Application.routes.draw do
   get "test/jquery_ui_basic"
   get "test/ujs_basic"
 
-  get "rake/run"
+  get "rails_env/environment"
+  get "rails_env/configure_files"
+  get "rails_env/log_files"
+  get "rails_env/routes"
+  get "rails_rake/run"
 
 
   # The priority is based upon order of creation:

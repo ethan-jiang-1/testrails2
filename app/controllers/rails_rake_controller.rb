@@ -4,7 +4,7 @@ require 'stringio'
 Rake::Task.clear # necessary to avoid tasks being loaded several times in dev mode
 TestRails2::Application.load_tasks #
 
-class RakeController < ApplicationController
+class RailsRakeController < ApplicationController
   #layout "application_light"
 
   rescue_from Exception, :with => :handle_exceptions
