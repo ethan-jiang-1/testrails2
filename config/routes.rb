@@ -5,8 +5,8 @@ TestRails2::Application.routes.draw do
 
   root :to => "home#index"
   
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  devise_for :users, ActiveAdmin::Devise.config
+  #ActiveAdmin.routes(self)
 
   get "pictures/blob_picture"
 
@@ -28,8 +28,8 @@ TestRails2::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
-  devise_for :user_admins
-  ActiveAdmin.routes(self)
+  #devise_for :user_admins
+  #ActiveAdmin.routes(self)
 
 
   get "home/index"
