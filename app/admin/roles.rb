@@ -1,4 +1,4 @@
-ActiveAdmin.register Order do
+ActiveAdmin.register Role do
     menu :parent => "CRM"
 
 end
