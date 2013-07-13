@@ -258,5 +258,14 @@ RailsAdmin.config do |config|
     navigation_label 'EPP'
   end
 
+  config.model 'AdminUser' do
+    navigation_label 'Account'
+  end
+  config.model 'User' do
+    navigation_label 'Account'
+  end
+  config.model 'UserAdmin' do
+    navigation_label 'Account'
+  end
 
 end
