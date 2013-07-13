@@ -18,7 +18,7 @@ TestRails2::Application.routes.draw do
   resources :gmap_users
 
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  mount RailsAdmin::Engine => '/radmin', :as => 'rails_admin'
 
   devise_for :user_admins
 
