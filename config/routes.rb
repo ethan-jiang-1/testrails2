@@ -28,10 +28,6 @@ TestRails2::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
-  #devise_for :user_admins
-  #ActiveAdmin.routes(self)
-
-
   get "home/index"
   get "home/search"
 

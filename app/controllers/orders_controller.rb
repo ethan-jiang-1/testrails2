@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   layout "application_heavy"
-  #before_filter :authenticate_user_admin, :except => [:show, :index]
+  #before_filter :authenticate_user, :except => [:show, :index]
 
   # GET /orders
   # GET /orders.json

@@ -23,6 +23,7 @@ describe PostsController do
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # update the return value of this method accordingly.
+
   def valid_attributes
     { "name" => "MyString" }
   end
