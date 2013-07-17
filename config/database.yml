@@ -4,7 +4,7 @@ development:
   database: TestRails2_development
   host: localhost
   username: rails
-  password: rails_pwd
+  password: sql_pwd_rails
   socket: /var/run/mysqld/mysqld.sock
   reconnect: false
   pool: 5
@@ -15,7 +15,7 @@ test:
   database: TestRails2_test
   host: localhost
   username: rails
-  password: rails_pwd
+  password: sql_pwd_rails
   socket: /var/run/mysqld/mysqld.sock
   reconnect: false
   pool: 5
@@ -26,7 +26,7 @@ production:
   database: TestRails2_production
   host: localhost
   username: rails
-  password: rails_pwd
+  password: sql_pwd_rails
 
 
 # possible adapters

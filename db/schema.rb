@@ -72,9 +72,11 @@ ActiveRecord::Schema.define(:version => 20121203165138) do
   add_index "customers", ["company_id"], :name => "index_customers_on_company_id"
   add_index "customers", ["picture_id"], :name => "index_customers_on_picture_id"
 
-  create_table "customers_roles", :id => false, :force => true do |t|
-    t.integer "customer_id"
-    t.integer "role_id"
+  create_table "customers_roles", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "role_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "customers_roles", ["customer_id"], :name => "index_customers_roles_on_customer_id"
@@ -103,7 +105,7 @@ ActiveRecord::Schema.define(:version => 20121203165138) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "location_relations", :id => false, :force => true do |t|
+  create_table "location_relations", :force => true do |t|
     t.integer  "loc_from_id"
     t.integer  "loc_to_id"
     t.datetime "created_at",  :null => false
