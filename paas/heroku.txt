@@ -23,4 +23,6 @@ step4) git init / git add . / git commit "init heroku" to make the copy as a mas
 step5) heroku login 
 step6) heroku create  -- you will get an url for the applicatoin
 step7) git push heroku master
-step8) wait....
+step8) heroku run rake db:migrate
+step9) herohu run rake db:seed
+step10) wait....
