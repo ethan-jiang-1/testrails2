@@ -12,7 +12,7 @@
 #
 
 class Location < ActiveRecord::Base
-  has_and_belongs_to_many :companies
+  has_many :companies
 
   attr_accessible :name, :address, :latitude, :longitude
   geocoded_by :address
@@ -25,6 +25,8 @@ class Location < ActiveRecord::Base
                           :association_foreign_key => "loc_from_id",
                           :foreign_key => "loc_to_id"
 
+
+    validates_uniqueness_of :name
 
   #has_many :subordinates, :class_name => "LocationRelation",  :foreign_key => "loc_from_id"
 

@@ -1,0 +1,16 @@
+<%= simple_form_for(@employee,:html => {:class => 'form-horizontal'}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.association :manager %>
+    <%= f.association :company %>
+    <%= f.association :pictures %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

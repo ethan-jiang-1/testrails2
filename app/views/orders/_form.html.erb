@@ -14,19 +14,20 @@
   <div class="control-group float optional">
       <%= f.label :track_no %>
       <div class="controls">
-          <%= f.input_field :track_no, :readonly => true, :class => 'input-xlarge' %>
+          <%= f.input_field :track_no, :readonly => true, :class => 'input-xxlarge' %>
       </div>
   </div>
   <!-- <%= f.input :track_no %> -->
 
-  <%= f.input :details %>
+  <%= f.input :details , :input_html => {:rows => '10', :class => 'input-xxlarge' } %>
   <!--
   <%= f.hint 'No special characters in product name, please!' %>
   <%= f.error :product, :id => 'product_error' %>
   <%= f.full_error :token %>
   -->
-
+  <%= f.association :employee %>
   <%= f.association :customer, :collection => Company.all(:order => 'name'), :prompt => "Choose a Company" %>
+  <%= f.association :products %>
 
   <!-- %= f.input :order_date %-->
   <div class="control-group">

@@ -2,17 +2,13 @@
 
 <p id="notice"><%= notice %></p>
 
-<dl class="dl-horizontal">
-  <dt>Order date:</dd>
-  <dd><%= @order.order_date %></dd>
-  <dt>Track_no:</dt>
-  <dd><%= @order.track_no %></dd>
-  <dt>Details:</dt>
-  <dd><%= @order.details %></dd>
-  <dt>Customer:</dt>
-  <dd><%= @order.customer %></dd>
-</dl>
+<p>Order date: <%= @order.order_date %>
+<p>Track_no: <%= @order.track_no %>
+<p>Details: <%= @order.details %>
+<p>Customer: <%= @order.customer_id %>
+<p>Employee: <%= @order.employee_id %>
+<p>Products: <%= @order.product_ids %>
 
-
+<p>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

@@ -4,18 +4,17 @@
   <tr>
     <th>Name</th>
     <th>Location</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Picture</th>
   </tr>
 
 <% @companies.each do |company| %>
   <tr>
     <td><%= company.name %></td>
-    <td><%= company.location_id %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= company.location_id %> - <%= Location.find_by_id(company.location_id).address if !Location.find_by_id(company.location_id).nil? %></td>
+    <td><%= company.picture_id %>  - <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => company.picture_id) %> </td>
+    <td><%= link_to 'Show', company %>
+        <%= link_to 'Edit', edit_company_path(company) %>
+        <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

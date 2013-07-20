@@ -1,0 +1,31 @@
+<h3> picture details </h3>
+<p id="notice"><%= notice %></p>
+
+<dl class="dl-horizontal">
+  <dt>UUID:</dt>
+  <dd><%= @picture.uuid %></dd>
+
+  <dt>Content Type:</dt>
+  <dd><%= @picture.content_type %></dd>
+
+  <dt>Store Loc:</dt>
+  <dd><%= @picture.store_loc %></dd>
+
+  <dt>Store URI:</dt>
+  <dd><%= @picture.store_uri %></dd>
+
+
+  <dt>Imageable Id:</dt>
+  <dd><%= @picture.imageable_id %></dd>
+
+  <dt>Imageable Type:</dt>
+  <dd><%= @picture.imageable_type %></dd>
+
+</dl>
+
+<div>
+  <p>Local data:<%= image_tag url_for(:action => 'blob_picture', :id => @picture.id)  %>
+</div>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

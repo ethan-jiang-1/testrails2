@@ -11,7 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120061041) do
+ActiveRecord::Schema.define(:version => 20130713081133) do
+
+  create_table "active_admin_comments", :force => true do |t|
+    t.string   "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "namespace"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "appointments", :force => true do |t|
     t.integer  "physician_id"
@@ -31,10 +64,8 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   end
 
   create_table "assembly_parts", :force => true do |t|
-    t.integer  "assembly_id"
-    t.integer  "part_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer "assembly_id"
+    t.integer "part_id"
   end
 
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
@@ -48,30 +79,31 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-    t.string   "location"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "customer_role_relations", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "role_id"
+    t.integer  "location_id"
+    t.integer  "picture_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "customer_role_relations", ["customer_id"], :name => "index_customer_role_relations_on_customer_id"
-  add_index "customer_role_relations", ["role_id"], :name => "index_customer_role_relations_on_role_id"
+  add_index "companies", ["picture_id"], :name => "index_companies_on_picture_id"
 
   create_table "customers", :force => true do |t|
     t.string   "name"
     t.string   "phone"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "phone_mobile"
+    t.string   "mailing_address"
+    t.string   "email_address"
+    t.string   "social_info"
     t.integer  "company_id"
+    t.integer  "picture_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  create_table "customers_roles", :id => false, :force => true do |t|
+  add_index "customers", ["company_id"], :name => "index_customers_on_company_id"
+  add_index "customers", ["picture_id"], :name => "index_customers_on_picture_id"
+
+  create_table "customers_roles", :force => true do |t|
     t.integer "customer_id"
     t.integer "role_id"
   end
@@ -82,10 +114,14 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   create_table "employees", :force => true do |t|
     t.string   "name"
     t.integer  "manager_id"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "company_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
+  add_index "employees", ["company_id"], :name => "index_employees_on_company_id"
   add_index "employees", ["manager_id"], :name => "index_employees_on_manager_id"
 
   create_table "gmap_users", :force => true do |t|
@@ -98,23 +134,21 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "location_relations", :id => false, :force => true do |t|
-    t.integer  "loc_from_id"
-    t.integer  "loc_to_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "location_relations", :force => true do |t|
+    t.integer "loc_from_id"
+    t.integer "loc_to_id"
   end
 
   add_index "location_relations", ["loc_from_id"], :name => "index_location_relations_on_loc_from_id"
   add_index "location_relations", ["loc_to_id"], :name => "index_location_relations_on_loc_to_id"
 
   create_table "locations", :force => true do |t|
+    t.string   "name"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "name"
   end
 
   create_table "models", :force => true do |t|
@@ -136,14 +170,24 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   add_index "models", ["reset_password_token"], :name => "index_models_on_reset_password_token", :unique => true
 
   create_table "orders", :force => true do |t|
-    t.date     "order_date"
-    t.string   "product"
+    t.string   "track_no",    :limit => 36
+    t.text     "details"
     t.integer  "customer_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "employee_id"
+    t.date     "order_date"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
+
+  create_table "orders_products", :force => true do |t|
+    t.integer "order_id"
+    t.integer "product_id"
+  end
+
+  add_index "orders_products", ["order_id"], :name => "index_orders_products_on_order_id"
+  add_index "orders_products", ["product_id"], :name => "index_orders_products_on_product_id"
 
   create_table "parts", :force => true do |t|
     t.string   "part_name"
@@ -164,12 +208,18 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
   end
 
   create_table "pictures", :force => true do |t|
-    t.string   "name"
     t.integer  "imageable_id"
     t.string   "imageable_type"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.string   "uuid",           :limit => 36
+    t.string   "content_type",   :limit => 16
+    t.string   "store_loc",      :limit => 10
+    t.string   "store_uri"
+    t.binary   "local_data"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
+
+  add_index "pictures", ["uuid"], :name => "index_pictures_on_uuid"
 
   create_table "posts", :force => true do |t|
     t.string   "name"
@@ -181,10 +231,10 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "category"
     t.float    "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -224,5 +274,23 @@ ActiveRecord::Schema.define(:version => 20121120061041) do
 
   add_index "user_admins", ["email"], :name => "index_user_admins_on_email", :unique => true
   add_index "user_admins", ["reset_password_token"], :name => "index_user_admins_on_reset_password_token", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

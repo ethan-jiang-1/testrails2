@@ -2,20 +2,30 @@
 
 <table class="table table-hover">
   <tr class="container-fluid">
-    <th class="span2">Name</th>
-    <th class="span2">Phone</th>
-    <th class="span2">Company</th>
-    <th class="span2">Role(s)</th>
-    <th class="span4"></th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Phone Mobile</th>
+    <th>Mailing Address</th>
+    <th>Email Address</th>
+    <th>Socal Info</th>
+    <th>Company</th>
+    <th>Picture</th>
+    <th>Role(s)</th>
+    <th></th>
   </tr>
 
 <% @customers.each do |customer| %>
   <tr class="container-fluid">
-    <td class="span2"><%= customer.name %></td>
-    <td class="span2"><%= customer.phone %></td>
-    <td class="span2"><%= customer.company_id %></td>
-    <td class="span2"><%= customer.role_ids %></td>
-    <td class="span4">
+    <td><%= customer.name %></td>
+    <td><%= customer.phone %></td>
+    <td><%= customer.phone_mobile %></td>
+    <td><%= customer.mailing_address %></td>
+    <td><%= customer.email_address %></td>
+    <td><%= customer.social_info %></td>
+    <td><%= customer.company_id %></td>
+    <td><%= customer.picture_id %></td>
+    <td><%= customer.role_ids %></td>
+    <td>
       <%= link_to 'Show', customer, :class => "btn" %>
       <%= link_to 'Edit', edit_customer_path(customer), :class => "btn" %>
       <%= link_to 'Destroy', customer, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn" %>

@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :picture  do
-    sequence(:name) {|n| "pic#{n}" }
+    sequence(:uuid) {|n| UUIDTools::UUID.random_create.to_s }
   end
 end

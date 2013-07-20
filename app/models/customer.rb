@@ -2,18 +2,25 @@
 #
 # Table name: customers
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  phone      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  company_id :integer
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  phone           :string(255)
+#  phone_mobile    :string(255)
+#  mailing_address :string(255)
+#  email_address   :string(255)
+#  social_info     :string(255)
+#  company_id      :integer
+#  picture_id      :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :phone, :company_id, :role_ids
+  attr_accessible :name, :phone, :phone_mobile, :mailing_address, :email_address, :social_info
+  attr_accessible :company_id, :role_ids, :picture_id
 
   belongs_to :company
+  belongs_to :picture
   has_and_belongs_to_many :roles
 
   has_many :orders, :inverse_of => :customer

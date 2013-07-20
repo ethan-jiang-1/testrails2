@@ -4,6 +4,11 @@
 <p> <b>Name: </b> <%= @product.name %> </p>
 <p> <b>Category: </b> <%= @product.category %> </p>
 <p> <b>Price: <b> $<%= @product.price %> </p>
+<p> <b>Pictures: <b> $<%= @product.picture_ids %>
+  <% @product.picture_ids.each do |pic_id| %>
+    <%= image_tag url_for(:action => 'blob_picture', :controller => 'pictures', :id => pic_id ) %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to "Destroy", @product, :confirm => "Are you sure?", :method => :delete %> |

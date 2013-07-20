@@ -1,0 +1,28 @@
+amazon has excellent doc here: http://docs.amazonwebservices.com/elasticbeanstalk/latest/dg/create_deploy_Ruby_rails.html
+
+1) no speciall change on master branch
+    11) branch out to a special branch
+    12) change the database.xml to use RDS database
+        production:
+          adapter: mysql2
+          encoding: utf8
+          database: <%= ENV['RDS_DB_NAME'] %>
+          username: <%= ENV['RDS_USERNAME'] %>
+          password: <%= ENV['RDS_PASSWORD'] %>
+          host: <%= ENV['RDS_HOSTNAME'] %>
+          port: <%= ENV['RDS_PORT'] %>
+2) init eb
+   eb init
+3) start eb
+   eb start
+4) update eb
+   git aws.push
+5) stop eb
+   eb stop
+
+
+notice:
+1) AWS has rich support on Rails (32/64) and 1.8.7 and 1.9.3
+2) database: mysql, oracle
+3) ngix + passenger for webter
+   no need to precompile the asset, EB will handle it for you

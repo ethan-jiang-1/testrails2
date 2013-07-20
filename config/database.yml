@@ -3,25 +3,24 @@ development:
   encoding: utf8
   database: TestRails2_development
   host: localhost
-  username: rails
-  password: rails
-
+  username: testrails2
+  password: sql_pwd_testrails2
+ 
 test:
   adapter: postgresql
   encoding: utf8
   database: TestRails2_test
   host: localhost
-  username: rails
-  password: rails
-
-
+  username: testrails2
+  password: sql_pwd_testrails2
+ 
 production:
   adapter: postgresql
   encoding: utf8
   database: TestRails2_production
   host: localhost
-  username: rails
-  password: rails 
+  username: testrails2
+  password: sql_pwd_testrails2
 
 
 # possible adapters

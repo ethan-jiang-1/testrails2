@@ -1,24 +1,25 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 
   #assets in rails_admin?
   gem "rails_admin"
 
 
   #bootstrap
+  gem "twitter-bootstrap-rails", '2.2.6'
+
   #gem "therubyrhino"             #rhio engine - good for jruby
   gem "therubyracer"              #google v8   - good for MRI
   gem "less-rails"                # sprockets (what rails 3.1 uses for its asset pipeline) supports LESS
-  gem "twitter-bootstrap-rails"
 
 end
 
@@ -26,16 +27,20 @@ end
 group :test, :development do
   gem "rspec-rails"
   gem "require_relative"
-  gem "factory_girl_rails",  "=1.7.0"
+  gem "factory_girl_rails"
   gem "capybara"
 
   gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby, code profiler
+  gem "annotate"
 end
+
+#bootstrap
+
 
 
 
 #jquery
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'  # version number is required by activeadmin
 gem 'jquery-ui-rails'
 
 #db
@@ -57,4 +62,5 @@ gem "bootstrap-datepicker-rails"
 
 #plugins
 gem "rails_admin"
+gem "activeadmin"
 gem "devise"
