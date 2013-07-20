@@ -21,7 +21,7 @@ TestRails2::Application.routes.draw do
 
   resources :products
 
-  resources :comments
+  resources :post_comments
   resources :posts
 
   resources :gmap_users

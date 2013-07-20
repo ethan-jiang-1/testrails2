@@ -71,12 +71,6 @@ ActiveRecord::Schema.define(:version => 20130713081133) do
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
 
-  create_table "comments", :force => true do |t|
-    t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.integer  "location_id"
@@ -220,6 +214,12 @@ ActiveRecord::Schema.define(:version => 20130713081133) do
   end
 
   add_index "pictures", ["uuid"], :name => "index_pictures_on_uuid"
+
+  create_table "post_comments", :force => true do |t|
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
