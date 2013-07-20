@@ -39,7 +39,7 @@ end
 
 
 #jquery
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'  # version number is required by activeadmin
 gem 'jquery-ui-rails'
 
 #db
@@ -61,4 +61,5 @@ gem "bootstrap-datepicker-rails"
 
 #plugins
 gem "rails_admin"
+gem "activeadmin"
 gem "devise"

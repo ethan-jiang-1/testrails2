@@ -28,7 +28,7 @@ RailsAdmin.config do |config|
 
   # Exclude specific models (keep the others):
   # config.excluded_models = ['Appointment', 'Customer', 'Order', 'Patient', 'Physician']
-   config.excluded_models = ['GmapUser','CustomersRoles','LocationRelation', 'AssemblyPart']
+  # config.excluded_models = ['GmapUser','CustomersRoles','LocationRelation', 'AssemblyPart']
 
   # Include specific models (exclude the others):
   # config.included_models = ['Appointment', 'Customer', 'Order', 'Patient', 'Physician']
@@ -223,6 +223,9 @@ RailsAdmin.config do |config|
   config.model 'Part' do
     navigation_label 'AP'
   end
+  config.model 'AssemblyPart' do
+    navigation_label 'AP'
+  end
 
   config.model 'Post' do
     navigation_label 'Post'
@@ -247,6 +250,12 @@ RailsAdmin.config do |config|
   config.model 'Order' do
     navigation_label 'CCLRO'
   end
+  config.model 'CustomersRoles' do
+    navigation_label 'CCLRO'
+  end
+  config.model 'LocationRelations' do
+    navigation_label 'CCLRO'
+  end
 
   config.model 'Employee' do
     navigation_label 'EPP'
@@ -258,5 +267,14 @@ RailsAdmin.config do |config|
     navigation_label 'EPP'
   end
 
+  config.model 'AdminUser' do
+    navigation_label 'Account'
+  end
+  config.model 'User' do
+    navigation_label 'Account'
+  end
+  config.model 'UserAdmin' do
+    navigation_label 'Account'
+  end
 
 end

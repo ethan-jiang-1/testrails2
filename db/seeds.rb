@@ -7,6 +7,14 @@
 #   Mayor.create(:name => 'Emanuel', :city => cities.first)
 
 
+#admin user in 3 different devise DB
+print "[testrails2:db:seed]: admins in differnet devise\n"
+UserAdmin.find_or_create_by_email(email:"admin@testrails2.com", password:"123456", password_confirmation:"123456")
+AdminUser.find_or_create_by_email(email:"admin@testrails2.com", password:"123456", password_confirmation:"123456")
+User.find_or_create_by_email(email:"admin@testrails2.com", password:"123456", password_confirmation:"123456")
+
+
+
 #--Roles
 print "[testrails2:db:seed]: roles\n"
 def sd_create_role name
@@ -239,3 +247,5 @@ o3.customer = x1
 o3.employee = e5
 o3.products << t3
 o3.save
+
+
