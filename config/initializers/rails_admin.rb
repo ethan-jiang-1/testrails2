@@ -230,8 +230,12 @@ RailsAdmin.config do |config|
   config.model 'Post' do
     navigation_label 'Post'
   end
-  config.model 'Comment' do
-    parent 'Post'
+  config.model 'PostComment' do
+    #parent 'Post'
+    navigation_label 'Post'
+  end
+  config.model 'PostsPostComments' do
+    #parent 'Post'
     navigation_label 'Post'
   end
 
