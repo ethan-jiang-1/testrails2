@@ -8,6 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-class Comment < ActiveRecord::Base
-  attr_accessible :content
+require 'spec_helper'
+
+describe PostComment do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe "comments/index" do
+describe "post_comments/index" do
   before(:each) do
-    assign(:comments, [
-      stub_model(Comment,
+    assign(:post_comments, [
+      stub_model(PostComment,
         :content => "Content"
       ),
-      stub_model(Comment,
+      stub_model(PostComment,
         :content => "Content"
       )
     ])
