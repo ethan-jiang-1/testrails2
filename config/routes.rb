@@ -7,6 +7,7 @@ TestRails2::Application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  match '/active_admin' => redirect('/admin')   #ActiveAdim using /admin by default
 
   get "pictures/blob_picture"
 
@@ -26,10 +27,9 @@ TestRails2::Application.routes.draw do
   resources :gmap_users
 
 
-  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
-
   devise_for :user_admins
-  ActiveAdmin.routes(self)
+  mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
+  #ActiveAdmin.routes(self)
 
 
   get "home/index"
@@ -111,7 +111,7 @@ TestRails2::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   #devise_for :admins
-  ActiveAdmin.routes(self)
+  #ActiveAdmin.routes(self)
   # # Feel free to change '/admin' to any namespace you need.
 
 end
