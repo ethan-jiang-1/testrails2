@@ -1,4 +1,4 @@
 ActiveAdmin.register Post do
-	menu false
+	menu :parent => "Post"
   
 end

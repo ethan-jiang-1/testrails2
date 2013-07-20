@@ -10,4 +10,8 @@
 
 class PostComment < ActiveRecord::Base
   attr_accessible :content
+
+  def display_name
+  	"#{content}"
+  end
 end
