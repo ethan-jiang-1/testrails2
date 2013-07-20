@@ -16,6 +16,9 @@ ruby runtime key points:
 
 Updated note:  as we have heroku branch (ruby 2.0)
 
+
+Updated note:  as we have heroku branch (ruby 2.0)
+
 step1) make sure heroku branch works in local enviroment
 step2) copy entire folder to new folder such as testrails2_heroku
 step3) move to new folder (testrails2_heroku) and delete .git folder
@@ -23,4 +26,6 @@ step4) git init / git add . / git commit "init heroku" to make the copy as a mas
 step5) heroku login 
 step6) heroku create  -- you will get an url for the applicatoin
 step7) git push heroku master
-step8) wait....
+step8) heroku run rake db:migrate
+step9) herohu run rake db:seed
+step10) wait....
