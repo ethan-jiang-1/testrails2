@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: utf8
-  database: TestRails2_development
+  database: testrails2_development
   host: localhost
   username: testrails2
   password: sql_pwd_testrails2
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: utf8
-  database: TestRails2_test
+  database: testrails2_test
   host: localhost
   username: testrails2
   password: sql_pwd_testrails2
@@ -17,7 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: TestRails2_production
+  database: testrails2_production
   host: localhost
   username: testrails2
   password: sql_pwd_testrails2
