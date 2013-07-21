@@ -32,6 +32,9 @@ group :test, :development do
 
   gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby, code profiler
   gem "annotate"
+
+  gem "hoe" #for testing iCalendar
+
 end
 
 #bootstrap
@@ -53,6 +56,7 @@ gem "fastercsv"                 #csv: mime type for Comma_separated Values
 gem "awesome_print"
 gem "simple_form"
 gem "uuidtools"
+gem "icalendar"
 
 
 #utilities - back/frontend
