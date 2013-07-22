@@ -1,0 +1,2 @@
+class StudentPartTime < Student
+end

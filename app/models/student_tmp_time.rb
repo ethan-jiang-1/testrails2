@@ -1,0 +1,2 @@
+class StudentTmpTime < Student
+end 
