@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130722161343) do
+ActiveRecord::Schema.define(:version => 20130722170722) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -244,6 +244,39 @@ ActiveRecord::Schema.define(:version => 20130722161343) do
 
   add_index "posts_post_comments", ["post_comment_id"], :name => "index_posts_post_comments_on_post_comment_id"
   add_index "posts_post_comments", ["post_id"], :name => "index_posts_post_comments_on_post_id"
+
+  create_table "price_model1s", :force => true do |t|
+    t.integer  "price1"
+    t.integer  "price2"
+    t.integer  "price3"
+    t.integer  "price4"
+    t.integer  "price5"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "price_model2s", :force => true do |t|
+    t.integer  "priceA"
+    t.integer  "priceB"
+    t.integer  "priceC"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "price_model3s", :force => true do |t|
+    t.integer  "priceX"
+    t.integer  "priceY"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "prices", :force => true do |t|
+    t.integer  "heir_id"
+    t.string   "heir_type"
+    t.integer  "base_price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
