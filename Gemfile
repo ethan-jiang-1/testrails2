@@ -32,6 +32,8 @@ group :test, :development do
 
   gem "ruby-prof", :platform => :ruby  #ruby-prof failed to be compiled in jruby, code profiler
   gem "annotate"
+
+  gem 'guard-rspec'
 end
 
 #bootstrap
