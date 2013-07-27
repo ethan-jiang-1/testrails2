@@ -1,0 +1,2 @@
+module ModelDataHelper
+end

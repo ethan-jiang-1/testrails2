@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130722170722) do
+ActiveRecord::Schema.define(:version => 20130727094050) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -149,6 +149,31 @@ ActiveRecord::Schema.define(:version => 20130722170722) do
     t.float    "longitude"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "model_data", :force => true do |t|
+    t.boolean  "boolean1"
+    t.boolean  "boolean2"
+    t.date     "date1"
+    t.date     "date2"
+    t.datetime "datetime1"
+    t.datetime "datetime2"
+    t.decimal  "decimal1",   :precision => 10, :scale => 0
+    t.decimal  "decimal2",   :precision => 10, :scale => 0
+    t.float    "float1"
+    t.float    "float2"
+    t.integer  "integer1"
+    t.integer  "integer2"
+    t.string   "string1"
+    t.string   "string2"
+    t.time     "time1"
+    t.time     "time2"
+    t.datetime "timestamp1"
+    t.datetime "timestamp2"
+    t.text     "text1"
+    t.text     "text2"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "models", :force => true do |t|

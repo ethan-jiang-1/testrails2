@@ -1,6 +1,9 @@
 TestRails2::Application.routes.draw do
 
 
+  resources :model_data
+
+
   devise_for :users
 
   root :to => "home#index"
