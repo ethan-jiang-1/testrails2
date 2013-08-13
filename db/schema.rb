@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130722170722) do
+ActiveRecord::Schema.define(:version => 20130813171619) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(:version => 20130722170722) do
   end
 
   add_index "companies", ["picture_id"], :name => "index_companies_on_picture_id"
+
+  create_table "currency_numbers", :force => true do |t|
+    t.float    "float1"
+    t.float    "float2"
+    t.decimal  "decimal1",   :precision => 10, :scale => 2
+    t.decimal  "decimal2",   :precision => 10, :scale => 2
+    t.integer  "integer1"
+    t.integer  "integer2"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "name"
