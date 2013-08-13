@@ -6,7 +6,15 @@ TestRails2::Application.routes.draw do
   root :to => "home#index"
   
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  #issue with rake db:migration 
+  #see here for more details https://github.com/gregbell/active_admin/issues/783
+  #ActiveAdmin.routes(self)
+  begin
+      ActiveAdmin.routes(self)
+  rescue Exception => e
+      puts "ActiveAdmin: #{e.class}: #{e}"
+  end
+
   match '/active_admin' => redirect('/admin')   #ActiveAdim using /admin by default
 
   get "pictures/blob_picture"
