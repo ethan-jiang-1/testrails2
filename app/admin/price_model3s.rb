@@ -1,4 +1,4 @@
 ActiveAdmin.register PriceModel3 do
-	menu :parent => "Price"
+	menu :parent => "Price SIT"
     
 end
