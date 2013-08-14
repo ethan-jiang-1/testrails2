@@ -66,3 +66,5 @@ gem "rails_admin"
 gem "activeadmin"
 gem "devise"
 gem "heritage"
+
+gem 'state_machine'
