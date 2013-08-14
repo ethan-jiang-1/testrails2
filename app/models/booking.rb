@@ -5,6 +5,7 @@ class Booking < ActiveRecord::Base
   attr_accessor :invalid_payment
 
   state_machine initial: :incomplete do
+  	store_audit_trail
     event :purchase do
       transition :incomplete => :open
     end

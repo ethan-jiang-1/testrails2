@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814170514) do
+ActiveRecord::Schema.define(:version => 20130814172404) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(:version => 20130814170514) do
 
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
+
+  create_table "booking_state_transitions", :force => true do |t|
+    t.integer  "booking_id"
+    t.string   "event"
+    t.string   "from"
+    t.string   "to"
+    t.datetime "created_at"
+  end
+
+  add_index "booking_state_transitions", ["booking_id"], :name => "index_booking_state_transitions_on_booking_id"
 
   create_table "bookings", :force => true do |t|
     t.string   "what"
