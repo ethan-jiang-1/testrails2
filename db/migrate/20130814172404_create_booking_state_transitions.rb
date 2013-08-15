@@ -5,6 +5,7 @@ class CreateBookingStateTransitions < ActiveRecord::Migration
       t.string :event
       t.string :from
       t.string :to
+      t.string :state_message
       t.timestamp :created_at
     end
     add_index :booking_state_transitions, :booking_id

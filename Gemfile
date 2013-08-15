@@ -34,6 +34,8 @@ group :test, :development do
   gem "annotate"
 
   gem 'guard-rspec'
+
+  gem 'pry'
 end
 
 #bootstrap

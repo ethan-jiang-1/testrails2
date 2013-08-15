@@ -1,0 +1,10 @@
+add pry in application
+	gem 'pry', :group => :development
+
+
+launch pry with rails environment
+	pry -r ./config/environment
+
+whereever if you want to enter pry add following code
+	binding.pry
+

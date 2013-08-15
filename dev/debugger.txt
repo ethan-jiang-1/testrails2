@@ -1,0 +1,17 @@
+Debug Rails
+	add gem
+		gem 'debugger'. group: [:development, :test]
+
+	whereever if you want to break add
+		debugger
+
+
+Debug Rake
+	Andrey Kouznetsov's answer didn't work for me using Ruby 1.9.3. The ruby-debug gem doesn't seem to support Ruby 1.9. I had to use the debugger gem: https://github.com/cldwalker/debugger.
+
+	Add gem 'debugger' to my Gemfile's development group.
+	Run bundle.
+	Add require 'debugger' to the top of my rake task.
+	Add a call to debugger where I wanted a breakpoint in my rake task.
+	Run the rake task normally from the command line, e.g.: rake my:task.
+

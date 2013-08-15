@@ -1,11 +1,14 @@
 class Booking < ActiveRecord::Base
   attr_accessible :state, :what
+  attr_accessible :state_message
+  has_many :booking_state_transitions
 
   scope :open_bookings, -> { with_state(:open) }
   attr_accessor :invalid_payment
 
   state_machine initial: :incomplete do
-  	store_audit_trail
+  	#store_audit_trail
+  	store_audit_trail :context_to_log => :state_message
     event :purchase do
       transition :incomplete => :open
     end
@@ -27,4 +30,5 @@ class Booking < ActiveRecord::Base
       !booking.invalid_payment
     end
   end
+
 end

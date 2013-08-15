@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130814172404) do
     t.string   "event"
     t.string   "from"
     t.string   "to"
+    t.string   "state_message"
     t.datetime "created_at"
   end
 
@@ -86,8 +87,9 @@ ActiveRecord::Schema.define(:version => 20130814172404) do
   create_table "bookings", :force => true do |t|
     t.string   "what"
     t.string   "state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "state_message"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "companies", :force => true do |t|
