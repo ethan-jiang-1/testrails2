@@ -47,8 +47,7 @@ gem 'jquery-rails', '2.3.0'  # version number is required by activeadmin
 gem 'jquery-ui-rails'
 
 #db
-#gem 'mysql2'
-gem 'pg'
+gem 'mysql2'
 
 #utilities - backend
 gem 'geocoder'
