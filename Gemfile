@@ -72,3 +72,5 @@ gem "heritage"
 
 gem 'state_machine'
 gem 'state_machine-audit_trail'
+
+gem 'rufus-scheduler'

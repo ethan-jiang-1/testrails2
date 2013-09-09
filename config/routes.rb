@@ -1,6 +1,11 @@
 TestRails2::Application.routes.draw do
 
 
+  get "jobs/tick"
+  resources :jobs
+
+
+
   devise_for :users
 
   root :to => "home#index"
