@@ -4,23 +4,17 @@
 	 require 'net/http'
 	 scheduler = Rufus::Scheduler.start_new
 
-	def puts_argvs
-		 ARGV.each do|a|
-		  puts "Argument: #{a}"
-		end
-	end
 
-	#puts_argvs
 
-	 scheduler.every '10s' do
+	port = Rails::Server.new.options[:Port]
+	puts "HeartBeat: Rails Server port is : " + port.to_s
 
-	      puts "tick - 10s"
 
-	      #puts_argvs 
+	 scheduler.every '300s' do
 
-	      #Net::HTTP.get('localhost','/jobs#tick')
-	      #do something here
-	      Net::HTTP.start("127.0.0.1", 3000) { |http| http.get('/jobs/tick') }
+	      puts "HeartBeet: 5 mins (i.e 300s intervals) "
+
+	      Net::HTTP.start("127.0.0.1", port) { |http| http.get('/jobs/tick') }
 
 	 end
 
@@ -29,6 +23,12 @@ end
 
 
 =begin
+
+	def puts_argvs
+		 ARGV.each do|a|
+		  puts "Argument: #{a}"
+		end
+	end
 
  scheduler.every '10m' do
    require "net/http"
