@@ -6,7 +6,6 @@ class CreateAssemblyParts < ActiveRecord::Migration
       t.references :assembly
       t.references :part
 
-      t.timestamps
     end
     add_index :assembly_parts, :assembly_id
     add_index :assembly_parts, :part_id

@@ -4,7 +4,6 @@ class CreateOrdersProducts < ActiveRecord::Migration
       t.references :order
       t.references :product
 
-      t.timestamps
     end
     add_index :orders_products, :order_id
     add_index :orders_products, :product_id
