@@ -246,9 +246,9 @@ ActiveRecord::Schema.define(:version => 20130814172404) do
     t.string   "content_type",   :limit => 16
     t.string   "store_loc",      :limit => 10
     t.string   "store_uri"
-    t.binary   "local_data",     :limit => 16777215
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.binary   "local_data"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   add_index "pictures", ["uuid"], :name => "index_pictures_on_uuid"
