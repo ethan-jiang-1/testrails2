@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813171619) do
+ActiveRecord::Schema.define(:version => 20130814172404) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(:version => 20130813171619) do
     t.integer  "physician_id"
     t.integer  "patient_id"
     t.datetime "appointment_date"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
   end
 
   add_index "appointments", ["patient_id"], :name => "index_appointments_on_patient_id"
@@ -64,21 +62,36 @@ ActiveRecord::Schema.define(:version => 20130813171619) do
   end
 
   create_table "assembly_parts", :force => true do |t|
-    t.integer  "assembly_id"
-    t.integer  "part_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer "assembly_id"
+    t.integer "part_id"
   end
 
   add_index "assembly_parts", ["assembly_id"], :name => "index_assembly_parts_on_assembly_id"
   add_index "assembly_parts", ["part_id"], :name => "index_assembly_parts_on_part_id"
 
+  create_table "booking_state_transitions", :force => true do |t|
+    t.integer  "booking_id"
+    t.string   "event"
+    t.string   "from"
+    t.string   "to"
+    t.string   "state_message"
+    t.datetime "created_at"
+  end
+
+  add_index "booking_state_transitions", ["booking_id"], :name => "index_booking_state_transitions_on_booking_id"
+
+  create_table "bookings", :force => true do |t|
+    t.string   "what"
+    t.string   "state"
+    t.string   "state_message"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "companies", :force => true do |t|
-    t.string   "name"
-    t.integer  "location_id"
-    t.integer  "picture_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string  "name"
+    t.integer "location_id"
+    t.integer "picture_id"
   end
 
   add_index "companies", ["picture_id"], :name => "index_companies_on_picture_id"
@@ -111,10 +124,8 @@ ActiveRecord::Schema.define(:version => 20130813171619) do
   add_index "customers", ["picture_id"], :name => "index_customers_on_picture_id"
 
   create_table "customers_roles", :force => true do |t|
-    t.integer  "customer_id"
-    t.integer  "role_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer "customer_id"
+    t.integer "role_id"
   end
 
   add_index "customers_roles", ["customer_id"], :name => "index_customers_roles_on_customer_id"
@@ -144,10 +155,8 @@ ActiveRecord::Schema.define(:version => 20130813171619) do
   end
 
   create_table "location_relations", :force => true do |t|
-    t.integer  "loc_from_id"
-    t.integer  "loc_to_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer "loc_from_id"
+    t.integer "loc_to_id"
   end
 
   add_index "location_relations", ["loc_from_id"], :name => "index_location_relations_on_loc_from_id"
@@ -193,10 +202,8 @@ ActiveRecord::Schema.define(:version => 20130813171619) do
   add_index "orders", ["customer_id"], :name => "index_orders_on_customer_id"
 
   create_table "orders_products", :force => true do |t|
-    t.integer  "order_id"
-    t.integer  "product_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer "order_id"
+    t.integer "product_id"
   end
 
   add_index "orders_products", ["order_id"], :name => "index_orders_products_on_order_id"

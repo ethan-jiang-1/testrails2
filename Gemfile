@@ -34,6 +34,8 @@ group :test, :development do
   gem "annotate"
 
   gem 'guard-rspec'
+
+  gem 'pry'
 end
 
 #bootstrap
@@ -67,3 +69,6 @@ gem "rails_admin"
 gem "activeadmin"
 gem "devise"
 gem "heritage"
+
+gem 'state_machine'
+gem 'state_machine-audit_trail'
