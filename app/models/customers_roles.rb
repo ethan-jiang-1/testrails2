@@ -2,6 +2,7 @@
 #
 # Table name: customers_roles
 #
+#  id          :integer          not null, primary key
 #  customer_id :integer
 #  role_id     :integer
 #

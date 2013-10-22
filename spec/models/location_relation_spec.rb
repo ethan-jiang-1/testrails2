@@ -2,10 +2,9 @@
 #
 # Table name: location_relations
 #
+#  id          :integer          not null, primary key
 #  loc_from_id :integer
 #  loc_to_id   :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #
 
 require 'spec_helper'

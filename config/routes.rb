@@ -1,11 +1,8 @@
 TestRails2::Application.routes.draw do
 
-
-  devise_for :users
-
-  root :to => "home#index"
+root :to => "home#index"
   
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users, ActiveAdmin::Devise.config
   #issue with rake db:migration 
   #see here for more details https://github.com/gregbell/active_admin/issues/783
   #ActiveAdmin.routes(self)
@@ -15,7 +12,7 @@ TestRails2::Application.routes.draw do
       puts "ActiveAdmin: #{e.class}: #{e}"
   end
 
-  match '/active_admin' => redirect('/admin')   #ActiveAdim using /admin by default
+ # match '/active_admin' => redirect('/admin')   #ActiveAdim using /admin by default
 
   get "pictures/blob_picture"
 
@@ -33,12 +30,6 @@ TestRails2::Application.routes.draw do
   resources :posts
 
   resources :gmap_users
-
-
-  devise_for :user_admins
-  
-  #ActiveAdmin.routes(self)
-
 
   get "home/index"
   get "home/search"

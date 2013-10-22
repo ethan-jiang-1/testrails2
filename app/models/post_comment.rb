@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: post_comments
 #
 #  id         :integer          not null, primary key
 #  content    :string(255)

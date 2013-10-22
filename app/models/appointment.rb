@@ -6,8 +6,6 @@
 #  physician_id     :integer
 #  patient_id       :integer
 #  appointment_date :datetime
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
 #
 
 class Appointment < ActiveRecord::Base

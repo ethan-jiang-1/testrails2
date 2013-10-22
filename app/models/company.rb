@@ -6,8 +6,6 @@
 #  name        :string(255)
 #  location_id :integer
 #  picture_id  :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #
 
 class Company < ActiveRecord::Base
