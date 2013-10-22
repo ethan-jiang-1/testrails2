@@ -5,8 +5,6 @@ class CreateCompanies < ActiveRecord::Migration
       t.references :location
       t.references :picture
 
-
-      t.timestamps
     end
     add_index :companies, :picture_id
   end

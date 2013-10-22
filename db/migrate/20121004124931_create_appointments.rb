@@ -4,8 +4,6 @@ class CreateAppointments < ActiveRecord::Migration
       t.references :physician
       t.references :patient
       t.datetime :appointment_date
-
-      t.timestamps
     end
     add_index :appointments, :physician_id
     add_index :appointments, :patient_id

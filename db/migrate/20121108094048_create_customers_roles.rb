@@ -4,7 +4,6 @@ class CreateCustomersRoles < ActiveRecord::Migration
       t.references :customer
       t.references :role
 
-      t.timestamps
     end
     add_index :customers_roles, :customer_id
     add_index :customers_roles, :role_id
