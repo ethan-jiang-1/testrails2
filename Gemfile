@@ -10,10 +10,6 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 
-  #assets in rails_admin?
-  gem "rails_admin"
-
-
   #bootstrap
   gem "twitter-bootstrap-rails", '2.2.6'
 
@@ -64,7 +60,6 @@ gem "bootstrap-datepicker-rails"
 #gem "in_place_editing"
 
 #plugins
-gem "rails_admin"
 gem "activeadmin"
 gem "devise"
 gem "heritage"
