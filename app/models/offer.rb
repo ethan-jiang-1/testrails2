@@ -13,6 +13,7 @@
 #
 
 class Offer < ActiveRecord::Base
-  audited only: [:price_per_night]	
+  #audited only: [:price_per_night]	
+  audit :price_per_night
   attr_accessible :comment, :name, :price_from_mmc, :price_from_opr, :price_per_night
 end
