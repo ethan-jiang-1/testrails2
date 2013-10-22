@@ -68,3 +68,5 @@ gem 'state_machine'
 gem 'state_machine-audit_trail'
 
 gem 'auditable'
+
+gem 'paper_trail', '>= 3.0.0.beta1'
