@@ -18,6 +18,8 @@
 #  updated_at             :datetime         not null
 #
 
+require 'mp_user_traceable'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -29,4 +31,22 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   attr_accessible :name
+
+
+  #access-current-user-in-model
+  #find the practice here: http://stackoverflow.com/questions/2513383/access-current-user-in-model
+  def self.mp_get_current_user
+    Thread.current[:mp_current_user]
+  end
+
+  def self.mp_set_current_user usr
+    begin
+      Thread.current[:mp_current_user] = usr
+      MpUserTraceable::UserTracer.set_current_user usr  
+    rescue Exception => e
+      puts "User.mp_set_current_user exception occured: " + e.message
+      raise e
+    end
+  end
+  
 end

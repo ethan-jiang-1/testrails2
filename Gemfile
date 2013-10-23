@@ -32,6 +32,7 @@ group :test, :development do
   gem 'guard-rspec'
 
   gem 'pry'
+  gem 'debugger'
 end
 
 #bootstrap
@@ -67,4 +68,6 @@ gem "heritage"
 gem 'state_machine'
 gem 'state_machine-audit_trail'
 
-gem 'auditable'
+#gem 'debugger'
+
+#gem 'auditable'

@@ -4,6 +4,8 @@
 #
 #  id              :integer          not null, primary key
 #  name            :string(255)
+#  state           :string(255)
+#  state_message   :string(255)
 #  price_per_night :integer
 #  price_from_mmc  :integer
 #  price_from_opr  :integer

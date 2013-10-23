@@ -2,6 +2,7 @@ class CreateBookingStateTransitions < ActiveRecord::Migration
   def change
     create_table :booking_state_transitions do |t|
       t.references :booking
+      t.references :user
       t.string :event
       t.string :from
       t.string :to

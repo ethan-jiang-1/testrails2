@@ -1,10 +1,9 @@
 # == Schema Information
 #
-# Table name: booking_state_transitions
+# Table name: offer_state_transitions
 #
 #  id            :integer          not null, primary key
-#  booking_id    :integer
-#  user_id       :integer
+#  offer_id      :integer
 #  event         :string(255)
 #  from          :string(255)
 #  to            :string(255)
@@ -14,15 +13,13 @@
 
 require 'mp_user_traceable'
 
-
-class BookingStateTransition < ActiveRecord::Base
-  belongs_to :booking
-  belongs_to :user 
+class OfferStateTransition < ActiveRecord::Base
+  belongs_to :offer
   attr_accessible :created_at, :event, :from, :to
-  attr_accessible :state_message
-  attr_accessible :booking_id
-  attr_accessible :user_id 
+  attr_accessible :state_message 
+  attr_accessible :offer_id
+  attr_accessible :user_id
+
 
   trace_current_user
-  
 end

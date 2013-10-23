@@ -14,26 +14,14 @@
 #  updated_at     :datetime         not null
 #
 
+
+
 class Audit < ActiveRecord::Base
-#=begin  
   attr_accessible :id
-  attr_accessible :auditable_id
-  attr_accessible :auditable_type
-  attr_accessible :user_id
-  attr_accessible :user_type
+
+  attr_accessible :auditable_id,:auditable_type
+  attr_accessible :user_id, :user_type
+  attr_accessible :modifications
   attr_accessible :action
   attr_accessible :tag
-  attr_accessible :created_at
-  attr_accessible :updated_at
-
-  before_save :update_mp_user_id
-  private 
-  def update_mp_user_id
-    p "before save called"
-    debugger 
-    p "before save called"
-  end
-#=end
 end
-
-

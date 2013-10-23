@@ -1,4 +1,4 @@
 ActiveAdmin.register Booking do
-	menu :parent => "Booking"
+	menu :parent => "Macropolo"
   
 end

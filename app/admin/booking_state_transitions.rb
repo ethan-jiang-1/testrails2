@@ -1,3 +1,3 @@
 ActiveAdmin.register BookingStateTransition do
-  menu :parent => "Booking"
+  menu :parent => "Macropolo"
 end

@@ -8,8 +8,11 @@
 
 
 #admin user in 3 different devise DB
-print "[testrails2:db:seed]: admins in differnet devise\n"
-User.find_or_create_by_email(name:"admin", email:"admin@testrails2.com", password:"123456", password_confirmation:"123456")
+print "[testrails2:db:seed]: create accounts: admin, admin1, admin2, admin3@testrails2.com with password 123456 \n"
+User.find_or_create_by_email(name:"admin",  email:"admin@testrails2.com",  password:"123456", password_confirmation:"123456")
+User.find_or_create_by_email(name:"admin1", email:"admin1@testrails2.com", password:"123456", password_confirmation:"123456")
+User.find_or_create_by_email(name:"admin2", email:"admin2@testrails2.com", password:"123456", password_confirmation:"123456")
+User.find_or_create_by_email(name:"admin3", email:"admin3@testrails2.com", password:"123456", password_confirmation:"123456")
 
 
 

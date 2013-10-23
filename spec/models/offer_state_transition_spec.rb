@@ -1,10 +1,9 @@
 # == Schema Information
 #
-# Table name: booking_state_transitions
+# Table name: offer_state_transitions
 #
 #  id            :integer          not null, primary key
-#  booking_id    :integer
-#  user_id       :integer
+#  offer_id      :integer
 #  event         :string(255)
 #  from          :string(255)
 #  to            :string(255)
@@ -14,6 +13,6 @@
 
 require 'spec_helper'
 
-describe BookingStateTransition do
+describe OfferStateTransition do
   pending "add some examples to (or delete) #{__FILE__}"
 end
