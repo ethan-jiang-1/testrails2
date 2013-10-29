@@ -13,5 +13,10 @@
 require 'spec_helper'
 
 describe Booking do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "try book save" do
+  	booking = FactoryGirl.create(:booking, :state => :incomplete)
+
+  	booking.what = "aaa"
+  	booking.save!
+  end 
 end

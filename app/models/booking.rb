@@ -43,4 +43,23 @@ class Booking < ActiveRecord::Base
     end
   end
 
+  after_save :as_proc1
+  after_save :as_proc2
+  after_save :as_proc3
+
+  def as_proc1
+    puts "as_proc1"
+    true 
+  end 
+
+  def as_proc2
+    puts "as_proc2"
+    false
+  end 
+
+  def as_proc3
+    puts "as_proc3"
+    true 
+  end 
+
 end
