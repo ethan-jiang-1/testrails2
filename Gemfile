@@ -68,6 +68,8 @@ gem "heritage"
 gem 'state_machine'
 gem 'state_machine-audit_trail'
 
+gem 'comfortable_mexican_sofa', '~> 1.8.0'
+
 #gem 'debugger'
 
 #gem 'auditable'

@@ -14,6 +14,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_link_to (1.0.1)
+      actionpack
     activeadmin (0.6.0)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
@@ -59,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.3)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -68,6 +74,16 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    comfortable_mexican_sofa (1.8.1)
+      active_link_to (>= 1.0.0)
+      coffee-rails (>= 3.1.0)
+      formatted_form (>= 2.1.0)
+      haml-rails (>= 0.3.0)
+      jquery-rails (>= 2.2.0)
+      paperclip (>= 3.4.0)
+      rails (>= 3.1.0)
+      redcarpet (>= 2.2.0)
+      sass-rails (>= 3.1.0)
     commonjs (0.2.6)
     debugger (1.6.1)
       columnize (>= 0.3.1)
@@ -92,6 +108,8 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.0)
     formatador (0.2.4)
+    formatted_form (2.1.2)
+      rails (>= 3.1)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     geocoder (1.1.8)
@@ -105,6 +123,13 @@ GEM
     guard-rspec (3.0.2)
       guard (>= 1.8)
       rspec (~> 2.13)
+    haml (4.0.5)
+      tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     has_scope (0.5.1)
     heritage (0.3.2)
     hike (1.2.3)
@@ -150,6 +175,11 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
+    paperclip (3.5.2)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -187,6 +217,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     ref (1.0.5)
     require_relative (1.0.3)
     responders (0.9.3)
@@ -256,6 +287,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   capybara
   coffee-rails
+  comfortable_mexican_sofa (~> 1.8.0)
   debugger
   devise
   factory_girl_rails

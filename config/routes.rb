@@ -1,5 +1,11 @@
 TestRails2::Application.routes.draw do
 
+  
+  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
+  
+  # Make sure this routeset is defined last
+  ComfortableMexicanSofa::Routing.content(:path => '/cms', :sitemap => false)
+
 root :to => "home#index"
   
   devise_for :users, ActiveAdmin::Devise.config
