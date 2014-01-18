@@ -68,7 +68,7 @@ gem "heritage"
 gem 'state_machine'
 gem 'state_machine-audit_trail'
 
-gem "comfy_blog", "~> 0.1.8"
+gem 'refinerycms-blog', '~> 2.1.0'
 #gem 'debugger'
 
 #gem 'auditable'

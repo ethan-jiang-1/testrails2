@@ -1,4 +1,4 @@
-ComfyBlog.configure do |config|
+#ComfyBlog.configure do |config|
   
   # set the cms admin path if you have changed it for CMS
   #   config.admin_route_prefix = 'admin'
@@ -22,4 +22,4 @@ ComfyBlog.configure do |config|
   # Default is false.
   #   config.auto_publish_comments = false
   
-end
+#end
