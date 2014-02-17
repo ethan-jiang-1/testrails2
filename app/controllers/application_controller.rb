@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper Alchemy::PagesHelper
   protect_from_forgery
 
     #access-current-user-in-model

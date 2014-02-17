@@ -71,6 +71,7 @@ gem 'state_machine'
 gem 'state_machine-audit_trail'
 
 gem 'alchemy_cms', github: 'magiclabs/alchemy_cms', branch: '2.7-stable'
+#gem "alchemy-demo_kit"
 #gem 'debugger'
 
 #gem 'auditable'
