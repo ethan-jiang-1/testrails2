@@ -1,5 +1,7 @@
 TestRails2::Application.routes.draw do
 
+  mount Alchemy::Engine => '/content'
+
 root :to => "home#index"
   
   devise_for :users, ActiveAdmin::Devise.config

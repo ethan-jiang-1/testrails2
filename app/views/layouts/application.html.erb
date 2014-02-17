@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> <%= page_title_name %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-
-  <%= csrf_meta_tags %>
+  <%= render_meta_data %>
+  <%= stylesheet_link_tag 'application' %>
 </head>
 <body>
-
-<%= render "layouts/top_nav_bar" %>
-
-<div class="container-fluid" >
-<%= yield %>
-</div>
-
+  <%= yield %>
+  <%= alchemy_preview_mode_code %>
+  <%= alchemy_menu_bar %>
 </body>
 </html>

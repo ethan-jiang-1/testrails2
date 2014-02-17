@@ -40,7 +40,8 @@ end
 
 
 #jquery
-gem 'jquery-rails', '2.3.0'  # version number is required by activeadmin
+#gem 'jquery-rails', '2.3.0'  # version number is required by activeadmin
+gem 'jquery-rails', '3.0.4'  # version number is required by alchemy
 gem 'jquery-ui-rails'
 
 #db
@@ -62,12 +63,14 @@ gem "bootstrap-datepicker-rails"
 
 #plugins
 gem "activeadmin"
-gem "devise"
+#gem "devise"
+gem "devise", '2.2.3' #required by alchemy
 gem "heritage"
 
 gem 'state_machine'
 gem 'state_machine-audit_trail'
 
+gem 'alchemy_cms', github: 'magiclabs/alchemy_cms', branch: '2.7-stable'
 #gem 'debugger'
 
 #gem 'auditable'
