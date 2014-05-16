@@ -35,6 +35,7 @@ root :to => "home#index"
   resources :gmap_users
 
   resources :articles
+  get 'tags/:tag', to: 'articles#index', :as=> :tag  
 
   get "home/index"
   get "home/search"

@@ -30,10 +30,13 @@ group :test, :development do
   gem "annotate"
 
   gem 'guard-rspec'
+end
 
+group :development do
+  gem 'better_errors'
   gem 'pry'
   gem 'debugger'
-end
+end 
 
 #bootstrap
 
@@ -69,7 +72,5 @@ gem 'state_machine'
 gem 'state_machine-audit_trail'
 
 gem 'acts-as-taggable-on'
-
-#gem 'debugger'
 
 #gem 'auditable'

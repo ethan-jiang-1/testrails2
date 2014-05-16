@@ -51,6 +51,9 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.1.1)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     bootstrap-datepicker-rails (1.1.1.1)
       railties (>= 3.0)
     bourbon (3.1.8)
@@ -258,6 +261,7 @@ DEPENDENCIES
   acts-as-taggable-on
   annotate
   awesome_print
+  better_errors
   bootstrap-datepicker-rails
   capybara
   coffee-rails
