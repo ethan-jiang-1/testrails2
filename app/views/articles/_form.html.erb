@@ -1,6 +1,11 @@
 <%= simple_form_for(@article) do |f| %>
   <%= f.error_notification %>
 
+  <div class="field">
+	  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+	  <%= f.text_field :tag_list %>
+  </div>
+  
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :content %>

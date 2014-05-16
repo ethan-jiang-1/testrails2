@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h2> Article <%= @article.id %> </h2>
+
 <p>
   <b>Name:</b>
   <%= @article.name %>
@@ -9,6 +11,12 @@
   <b>Content:</b>
   <%= @article.content %>
 </p>
+
+<p>
+  <b>Tags:</b>
+  <%= @article.tag_list %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

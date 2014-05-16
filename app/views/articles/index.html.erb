@@ -1,10 +1,11 @@
 <h1>Listing articles</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Name</th>
     <th>Content</th>
-    <th></th>
+    <th>Tag</th>
+    <th>Actions</th>
     <th></th>
     <th></th>
   </tr>
@@ -13,9 +14,10 @@
   <tr>
     <td><%= article.name %></td>
     <td><%= article.content %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= article.tag_list %></td>
+    <td><%= link_to 'Show', article %> &nbsp;
+        <%= link_to 'Edit', edit_article_path(article) %> &nbsp;
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
