@@ -1,3 +1,5 @@
 ActiveAdmin.register Tagging do
-    menu :parent => "Tag"  
+    menu :parent => "Tag" 
+
+
 end

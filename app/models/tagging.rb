@@ -13,4 +13,7 @@
 #
 
 class Tagging < ActiveRecord::Base
+	attr_accessible :taggable_type
+    attr_accessible :tagger_type
+    attr_accessible :context
 end
