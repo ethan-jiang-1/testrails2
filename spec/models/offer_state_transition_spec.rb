@@ -4,6 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  offer_id      :integer
+#  user_id       :integer
 #  event         :string(255)
 #  from          :string(255)
 #  to            :string(255)

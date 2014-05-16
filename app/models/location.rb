@@ -3,12 +3,9 @@
 # Table name: locations
 #
 #  id         :integer          not null, primary key
-#  address    :string(255)
-#  latitude   :float
-#  longitude  :float
+#  name       :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  name       :string(255)
 #
 
 class Location < ActiveRecord::Base

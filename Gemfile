@@ -68,6 +68,8 @@ gem "heritage"
 gem 'state_machine'
 gem 'state_machine-audit_trail'
 
+gem 'acts-as-taggable-on'
+
 #gem 'debugger'
 
 #gem 'auditable'

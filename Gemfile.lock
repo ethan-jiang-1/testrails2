@@ -40,6 +40,10 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts-as-taggable-on (3.1.1)
+      actionpack (>= 3, < 5)
+      activerecord (>= 3, < 5)
+      activesupport (>= 3, < 5)
     annotate (2.5.0)
       rake
     arbre (1.0.1)
@@ -251,6 +255,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  acts-as-taggable-on
   annotate
   awesome_print
   bootstrap-datepicker-rails
