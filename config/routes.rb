@@ -1,5 +1,8 @@
 TestRails2::Application.routes.draw do
 
+  resources :articles
+
+
 root :to => "home#index"
   
   devise_for :users, ActiveAdmin::Devise.config
@@ -30,6 +33,8 @@ root :to => "home#index"
   resources :posts
 
   resources :gmap_users
+
+  resources :articles
 
   get "home/index"
   get "home/search"
